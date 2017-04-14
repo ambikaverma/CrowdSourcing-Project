@@ -1,0 +1,151 @@
+<!-- This file needs to be hosted on an external server.  -->
+<html>
+<link rel='stylesheet' type='text/css' href='style.css'>
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+<script language='Javascript'>
+// This method Gets URL Parameters (GUP)
+function gup(name) {
+  var regexS = '[\\?&]'+name+'=([^&#]*)';
+  var regex = new RegExp(regexS);
+  var tmpURL = window.location.href;
+  var results = regex.exec(tmpURL);
+  if(results == null)
+    return '';
+  else
+    return results[1];
+}
+
+// This method decodes the query parameters that were URL-encoded
+function decode(strToDecode) {
+  var encoded = strToDecode;
+  return unescape(encoded.replace(/\+/g,  ' '));
+}
+</script>
+
+<body>
+<form id='mturk_form' method='POST' action='https://www.mturk.com/mturk/externalSubmit'>
+
+<input type='hidden' id='assignmentId' name='assignmentId' value=''>
+
+<div>
+
+<p id='warning' class='important'><b>PLEASE ACCEPT THIS HIT BEFORE WORKING ON IT.</p></b><br>
+
+<div id='instructions'>
+
+<p><b class='important'>Instructions:</b> You will see a list of object categories predicted by a smart computer for a given image. Your job is to let the computer know if its predictions are correct or not. If it a category is missing from the prediction, you should also let it know what that category was.</p><br>
+
+<!-- <div class="container">
+<div class="progress">
+<div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+70%
+</div>
+</div>
+</div> -->
+
+</div>
+
+<div>
+
+<div id='task' class='section'>
+
+<table id='grid'>
+  <td id='left'><img id='img'></td>
+  <td id='right'>
+    <div>
+      <b>1. Is there a(n) _____ in the image?</b><br><br>
+      <table>
+        <tr>
+          <td>Horse</td>
+          <td><input type='radio' name='horse' value='yes'>&nbsp;Yes
+          &nbsp;&nbsp;
+          <input type='radio' name='horse' value='no'>&nbsp;No</td>
+        </tr>
+        <tr>
+          <td>Person</td>
+          <td><input type='radio' name='person' value='yes'>&nbsp;Yes
+          &nbsp;&nbsp;
+          <input type='radio' name='person' value='no'>&nbsp;No</td>
+        </tr>
+        <tr>
+          <td><a href=''>add another object</a></td>
+          <td><button type='button' id='del'>Delete</button></td>
+        </tr>
+      </table>
+    </div><br>
+    <div>
+      <b>2. How confident are you in your answer?</b>
+      <table>
+        <tr><td><input id='confidenceRange' type='range' name='confidence' min='1' max='5'></td></tr>
+        <tr><td><p id='confidenceLabel'></p></td></tr>
+      </table>
+    </div><br>
+    <div>
+      <table id='navButtons'>
+        <tr>
+          <td><button type='button' id='prev' class='nav'>< Previous</button></td>
+          <td><button type='button' id='issue' class='nav'>Image did not load</button></td>
+          <td><button type='button' id='next' class='nav'>Next ></button></td>
+        </tr>
+      </table>
+    </div>
+  </td>
+</table>
+</div>
+
+<!-- <div id='feedback' class='section'>
+<h2>Feedback</h2><br>
+
+<p>Thank you for taking the time to complete this task. If you would like to provide us feedback regarding this HIT, please do so here:</p><br>
+
+<textarea name='feedback'></textarea>
+</div> -->
+
+<!-- <input id='submitButton' type='submit' name='Submit' value='Submit'> -->
+
+</div>
+
+</form>
+
+<script language='Javascript'>
+$('#assignmentId').val('assignmentId');
+// Check if the worker is PREVIEWING the HIT or if they've ACCEPTED the HIT
+if (gup('assignmentId') == 'ASSIGNMENT_ID_NOT_AVAILABLE') {
+  // If we're previewing, disable the button and give it a helpful message
+  $('#submitButton').attr('disabled', true)
+  // $('#submitButton').val('You must ACCEPT the HIT before you can submit the results.');
+  $('#warning').show();
+} else {
+  var form = $('#mturk_form');
+  if (document.referrer && (document.referrer.indexOf('workersandbox') != -1)) {
+    form.action = 'https://workersandbox.mturk.com/mturk/externalSubmit';
+  }
+}
+</script>
+
+<script>
+// http://stackoverflow.com/questions/15195449/html5-type-range-showing-label
+var confidenceLabels = {
+  "1": "(Not at all)",
+  "2": "(Not very)",
+  "3": "(Somewhat)",
+  "4": "(Very)",
+  "5": "(Completely)"
+};
+
+$(function () {
+  // on page load, set the text of the label based the value of the range
+  $('#confidenceLabel').text(confidenceLabels[$('#confidenceRange').val()]);
+
+  // setup an event handler to set the text when the range value is dragged
+  // (see event for input) or changed (see event for change)
+  $('#confidenceRange').on('input change', function () {
+    $('#confidenceLabel').text(confidenceLabels[$(this).val()]);
+  });
+});
+</script>
+
+</body>
+</html>
