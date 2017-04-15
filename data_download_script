@@ -1,0 +1,27 @@
+%matplotlib inline
+from pycocotools.coco import COCO
+import numpy as np
+import skimage.io as io
+import matplotlib.pyplot as plt
+import pylab
+import urllib
+pylab.rcParams['figure.figsize'] = (10.0, 8.0)
+dataDir='/home/ambika'
+dataType='val2014'
+annFile='%s/annotations/instances_%s.json'%(dataDir,dataType)
+# initialize COCO api for instance annotations
+coco=COCO(annFile)
+# display COCO categories and supercategories
+cats = coco.loadCats(coco.getCatIds())
+nms=[cat['name'] for cat in cats]
+print 'COCO categories: \n\n', ' '.join(nms)
+
+nms = set([cat['supercategory'] for cat in cats])
+print 'COCO supercategories: \n', ' '.join(nms)
+# get all images containing given categories, select one at random
+catIds = coco.getCatIds(catNms=['couch']);
+imgIds = coco.getImgIds(catIds=catIds );
+print len(imgIds)
+for i in range(1,150):
+    img = coco.loadImgs(imgIds[np.random.randint(0,len(imgIds))])[0]
+    urllib.urlretrieve("%s"%(img['flickr_url']), "/home/ambika/data/couch/%d.jpg"%(img['id']))
