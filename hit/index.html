@@ -1,18 +1,18 @@
 <!-- This file needs to be hosted on an external server.  -->
 <html>
 <link rel='stylesheet' type='text/css' href='style.css'>
-<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+<link rel='stylesheet' type='text/css' href='rangeSlider.css'>
+<link rel='stylesheet' type='text/css' href='modal.css'>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 <script language='Javascript'>
 // This method Gets URL Parameters (GUP)
 function gup(name) {
-  var regexS = '[\\?&]'+name+'=([^&#]*)';
+  var regexS = "[\\?&]" + name + "=([^&#]*)";
   var regex = new RegExp(regexS);
   var tmpURL = window.location.href;
   var results = regex.exec(tmpURL);
   if(results == null)
-    return '';
+    return "";
   else
     return results[1];
 }
@@ -35,15 +35,7 @@ function decode(strToDecode) {
 
 <div id='instructions'>
 
-<p><b class='important'>Instructions:</b> You will see a list of object categories predicted by a smart computer for a given image. Your job is to let the computer know if its predictions are correct or not. If it a category is missing from the prediction, you should also let it know what that category was.</p><br>
-
-<!-- <div class="container">
-<div class="progress">
-<div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-70%
-</div>
-</div>
-</div> -->
+<p><b class='important'>Instructions:</b> You will see a list of object categories predicted by a smart computer for a given image. Your job is to let the computer know if its predictions are correct or not. If it a category is missing from the prediction, you should also let the computer know what that category is.</p>
 
 </div>
 
@@ -70,8 +62,7 @@ function decode(strToDecode) {
           <input type='radio' name='person' value='no'>&nbsp;No</td>
         </tr>
         <tr>
-          <td><a href=''>add another object</a></td>
-          <td><button type='button' id='del'>Delete</button></td>
+          <td><button type='button' id='addLink'>+ add another object</button></td>
         </tr>
       </table>
     </div><br>
@@ -95,6 +86,24 @@ function decode(strToDecode) {
 </table>
 </div>
 
+<div id='modal' class='modal'>
+
+  <div class="modal-content">
+    <b>Select categories to add:</b>
+    <table id='modal-values'>
+      <tr><td><input type='checkbox' class='categories' name='categories' value='test1'>&nbsp;test1</td></tr>
+      <tr><td><input type='checkbox' class='categories' name='categories' value='test2'>&nbsp;test2</td></tr>
+      <tr><td><input type='checkbox' class='categories' name='categories' value='test3'>&nbsp;test3</td></tr>
+      <tr>
+        <td><button id='modal-ok' type='button'>OK</button>
+        <button id='modal-cancel' type='button'>Cancel</button></td>
+      </tr>
+    </table>
+  </div>
+
+</div>
+
+
 <!-- <div id='feedback' class='section'>
 <h2>Feedback</h2><br>
 
@@ -109,42 +118,24 @@ function decode(strToDecode) {
 
 </form>
 
+<script src='main.js'></script>
+<script src='addObject.js'></script>
+<script src='rangeSlider.js'></script>
+
 <script language='Javascript'>
-$('#assignmentId').val('assignmentId');
-// Check if the worker is PREVIEWING the HIT or if they've ACCEPTED the HIT
-if (gup('assignmentId') == 'ASSIGNMENT_ID_NOT_AVAILABLE') {
-  // If we're previewing, disable the button and give it a helpful message
-  $('#submitButton').attr('disabled', true)
-  // $('#submitButton').val('You must ACCEPT the HIT before you can submit the results.');
-  $('#warning').show();
+$("#assignmentId").val("assignmentId");
+// Check if the worker is PREVIEWING the HIT or if they"ve ACCEPTED the HIT
+if (gup("assignmentId") == "ASSIGNMENT_ID_NOT_AVAILABLE") {
+  // If we"re previewing, disable the button and give it a helpful message
+  $("#submitButton").attr("disabled", true)
+  // $("#submitButton").val("You must ACCEPT the HIT before you can submit the results.");
+  $("#warning").show();
 } else {
-  var form = $('#mturk_form');
-  if (document.referrer && (document.referrer.indexOf('workersandbox') != -1)) {
-    form.action = 'https://workersandbox.mturk.com/mturk/externalSubmit';
+  var form = $("#mturk_form");
+  if (document.referrer && (document.referrer.indexOf("workersandbox") != -1)) {
+    form.action = "https://workersandbox.mturk.com/mturk/externalSubmit";
   }
 }
-</script>
-
-<script>
-// http://stackoverflow.com/questions/15195449/html5-type-range-showing-label
-var confidenceLabels = {
-  "1": "(Not at all)",
-  "2": "(Not very)",
-  "3": "(Somewhat)",
-  "4": "(Very)",
-  "5": "(Completely)"
-};
-
-$(function () {
-  // on page load, set the text of the label based the value of the range
-  $('#confidenceLabel').text(confidenceLabels[$('#confidenceRange').val()]);
-
-  // setup an event handler to set the text when the range value is dragged
-  // (see event for input) or changed (see event for change)
-  $('#confidenceRange').on('input change', function () {
-    $('#confidenceLabel').text(confidenceLabels[$(this).val()]);
-  });
-});
 </script>
 
 </body>
