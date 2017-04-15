@@ -1,8 +1,10 @@
 <!-- This file needs to be hosted on an external server.  -->
 <html>
+
 <link rel='stylesheet' type='text/css' href='css/style.css'>
 <link rel='stylesheet' type='text/css' href='css/rangeSlider.css'>
 <link rel='stylesheet' type='text/css' href='css/modal.css'>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script language='Javascript'>
 // This method Gets URL Parameters (GUP)
@@ -35,7 +37,7 @@ function decode(strToDecode) {
 
 <div id='instructions'>
 
-<p><b class='important'>Instructions:</b> You will see a list of object categories predicted by a smart computer for a given image. Your job is to let the computer know if its predictions are correct or not. If it a category is missing from the prediction, you should also let the computer know what that category is.</p>
+<p><b class='important'>Instructions:</b> You will see a list of object categories predicted by a smart computer for a given image. Your job is to let the computer know if its predictions are correct or not. If it a category is missing from the prediction, you should also let the computer know what that category is. If the image does not load, click the red button in the lower right corner. Press the "< Previous" and "Next >" buttons to navigate between images.</p>
 
 </div>
 
@@ -44,7 +46,7 @@ function decode(strToDecode) {
 <div id='task' class='section'>
 
 <table id='grid'>
-  <td id='left'><img id='img'></td>
+  <td id='left'><img></td>
   <td id='right'>
     <div>
       <b>1. Is there a(n) _____ in the image?</b><br><br>
@@ -89,7 +91,7 @@ function decode(strToDecode) {
 <div id='modal' class='modal'>
 
   <div class="modal-content">
-    <b>Select categories to add:</b>
+    <h3>Select categories to add:</h3>
     <table id='modal-values'>
       <tr><td><input type='checkbox' class='categories' name='categories' value='test1'>&nbsp;test1</td></tr>
       <tr><td><input type='checkbox' class='categories' name='categories' value='test2'>&nbsp;test2</td></tr>
@@ -119,6 +121,7 @@ function decode(strToDecode) {
 </form>
 
 <script src='js/main.js'></script>
+<script src='js/nav.js'></script>
 <script src='js/addObject.js'></script>
 <script src='js/rangeSlider.js'></script>
 
