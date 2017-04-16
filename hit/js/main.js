@@ -17,7 +17,11 @@ var workerLabels = {};
 })("imgs");
 
 function prepImg() {
+  $(".label").remove()
+  $("#confidenceRange").val(3)
+
   $("img").attr("src", "../samples/" + currentImg + ".jpg");
+
   if (workerLabels[currentImg])
     getWorkerLabels();
   else
@@ -38,7 +42,7 @@ function getPreLabels() {
     var label = mappings[val];
     workerLabels[currentImg].addedCategories.push(label);
     $("#inputs").prepend(
-      "<tr>" +
+      "<tr class='label'>" +
         "<td>" + label + "</td>" +
         "<td><input type='radio' name='" + label + "' value='yes'>&nbsp;Yes" +
         "&nbsp;&nbsp;" +

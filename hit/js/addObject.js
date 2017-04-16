@@ -32,7 +32,7 @@ $(document).ready(function() {
 
   function addObj(category) {
     $($("#addLink").parents()[1]).before(
-      "<tr>" +
+      "<tr class='label'>" +
         "<td>" + category + "</td>" +
         "<td>" +
           "<input type='radio' name='" + category + "' value='yes' disabled checked>&nbsp;Yes" + 
