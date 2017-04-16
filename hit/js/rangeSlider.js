@@ -13,6 +13,10 @@ $(function () {
   $("#confidenceLabel").text(confidenceLabels[$("#confidenceRange").val()]);
 
   $("#confidenceRange").on("input change", function () {
-    $("#confidenceLabel").text(confidenceLabels[$(this).val()]);
+    setConfidenceLabel();
   });
 });
+
+function setConfidenceLabel() {
+	$("#confidenceLabel").text(confidenceLabels[$("#confidenceRange").val()]);
+}
