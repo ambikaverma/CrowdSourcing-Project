@@ -1,0 +1,11 @@
+catIds = coco.getCatIds(catNms=['train']);
+print catIds
+
+I = io.imread('http://mscoco.org/images/%d'%(97782))
+plt.imshow(I); plt.axis('off')
+imgId=97782;
+annIds = coco.getAnnIds(imgIds=imgId)
+anns = coco.loadAnns(annIds)
+coco.showAnns(anns)
+print annIds
+print anns
