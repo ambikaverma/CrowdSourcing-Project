@@ -37,7 +37,7 @@ function decode(strToDecode) {
 
 <div id='instructions'>
 
-<p><b class='important'>Instructions:</b> You will see a list of object categories predicted by a smart computer for a given image. Your job is to let the computer know if its predictions are correct or not. If it a category is missing from the prediction, you should also let the computer know what that category is. If the image does not load, click the red button in the lower right corner. Press the "< Previous" and "Next >" buttons to navigate between images.</p>
+<p><b class='important'>Instructions:</b> You will see a list of object categories predicted by a smart computer for a given image. Your job is to let the computer know if its predictions are correct or not. If a category is missing from the prediction, you should also let the computer know what that category is. If the image does not load, click the red button in the lower right corner. Press the <b>< Previous</b> and <b>Next ></b> buttons to navigate between images.</p>
 
 </div>
 
@@ -50,19 +50,7 @@ function decode(strToDecode) {
   <td id='right'>
     <div>
       <b>1. Is there a(n) _____ in the image?</b><br><br>
-      <table>
-        <tr>
-          <td>Horse</td>
-          <td><input type='radio' name='horse' value='yes'>&nbsp;Yes
-          &nbsp;&nbsp;
-          <input type='radio' name='horse' value='no'>&nbsp;No</td>
-        </tr>
-        <tr>
-          <td>Person</td>
-          <td><input type='radio' name='person' value='yes'>&nbsp;Yes
-          &nbsp;&nbsp;
-          <input type='radio' name='person' value='no'>&nbsp;No</td>
-        </tr>
+      <table id='inputs'>
         <tr>
           <td><button type='button' id='addLink'>+ add another object</button></td>
         </tr>
@@ -93,9 +81,26 @@ function decode(strToDecode) {
   <div class="modal-content">
     <h3>Select categories to add:</h3>
     <table id='modal-values'>
-      <tr><td><input type='checkbox' class='categories' name='categories' value='test1'>&nbsp;test1</td></tr>
-      <tr><td><input type='checkbox' class='categories' name='categories' value='test2'>&nbsp;test2</td></tr>
-      <tr><td><input type='checkbox' class='categories' name='categories' value='test3'>&nbsp;test3</td></tr>
+      <tr>
+        <td><input type='checkbox' class='categories' name='categories' value='5'>&nbsp;Airplane</td>
+        <td><input type='checkbox' class='categories' name='categories' value='63'>&nbsp;Couch</td>
+      </tr>
+      <tr>
+        <td><input type='checkbox' class='categories' name='categories' value='16'>&nbsp;Bird</td>
+        <td><input type='checkbox' class='categories' name='categories' value='18'>&nbsp;Dog</td>
+      </tr>
+      <tr>
+        <td><input type='checkbox' class='categories' name='categories' value='6'>&nbsp;Bus</td>
+        <td><input type='checkbox' class='categories' name='categories' value='19'>&nbsp;Horse</td>
+      </tr>
+      <tr>
+        <td><input type='checkbox' class='categories' name='categories' value='3'>&nbsp;Car</td>
+        <td><input type='checkbox' class='categories' name='categories' value='1'>&nbsp;Person</td>
+      </tr>
+      <tr>
+        <td><input type='checkbox' class='categories' name='categories' value='17'>&nbsp;Cat</td>
+        <td><input type='checkbox' class='categories' name='categories' value='7'>&nbsp;Train</td>
+      </tr>
       <tr>
         <td><button id='modal-ok' type='button'>OK</button>
         <button id='modal-cancel' type='button'>Cancel</button></td>
@@ -120,6 +125,7 @@ function decode(strToDecode) {
 
 </form>
 
+<script src='js/pre-labels.js'></script>
 <script src='js/main.js'></script>
 <script src='js/nav.js'></script>
 <script src='js/addObject.js'></script>

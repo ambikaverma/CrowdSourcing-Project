@@ -1,5 +1,8 @@
 var imgs = [];
-var currentImg = 0;
+var current = 0;
+var currentImg = -1;
+var addedCategories = [];
+var workerLabels = {};
 
 (function(key) {
   var regexS = "[\\?&]" + key + "=([^&#]*)";
@@ -8,8 +11,39 @@ var currentImg = 0;
   var results = regex.exec(tmpURL);
   if(results != null) {
     imgs = results[1].split(",");
-    console.log(imgs)
-    console.log(imgs[0])
-    $("img").attr("src", "images/" + imgs[currentImg] + ".jpg");
+    currentImg = imgs[current];
+    prepImg();
   }
 })("imgs");
+
+function prepImg() {
+  $("img").attr("src", "../samples/" + currentImg + ".jpg");
+  if (workerLabels[currentImg])
+    getWorkerLabels();
+  else
+    getPreLabels();
+}
+
+function getWorkerLabels() {
+
+}
+
+function getPreLabels() {
+  workerLabels[currentImg] = {
+    "addedCategories": []
+  };
+
+  var labels = prelabels[currentImg];
+  $.each(labels, function(i, val) {
+    var label = mappings[val];
+    workerLabels[currentImg].addedCategories.push(label);
+    $("#inputs").prepend(
+      "<tr>" +
+        "<td>" + label + "</td>" +
+        "<td><input type='radio' name='" + label + "' value='yes'>&nbsp;Yes" +
+        "&nbsp;&nbsp;" +
+        "<input type='radio' name='" + label + "' value='no'>&nbsp;No</td>" +
+      "</tr>"
+    );
+  });
+}
