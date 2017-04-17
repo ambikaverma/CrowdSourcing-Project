@@ -16,6 +16,6 @@
 
 cd ../..
 cd bin
-./getResults.sh $1 $2 $3 $4 $5 $6 $7 $8 $9 -successfile ../hit-cli/external_hit/task.success -outputfile ../a3/external_hit/task.results
+./getResults.sh $1 $2 $3 $4 $5 $6 $7 $8 $9 -successfile ../hit-cli/external_hit/task.success -outputfile ../hit-cli/external_hit/task.results
 cd ..
 cd hit-cli/external_hit
