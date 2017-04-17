@@ -26,6 +26,12 @@ $(document).ready(function() {
 
   $("#submitButton").click(function() {
     $(".label, input[type=checkbox], #confidenceRange").remove();
+
+    $("<input />")
+      .attr("type", "hidden")
+      .attr("name", "labels")
+      .attr("value", JSON.stringify(workerAnswers))
+      .appendTo("#mturk_form");
   });
 
   function checkAnswers() {
@@ -51,6 +57,7 @@ $(document).ready(function() {
       return;
 
     if (error) {
+      workerAnswers[currentImg] = "error";
       currentLabels.addedCategories = currentLabels.prelabels.slice();
       currentLabels.positives = [];
       currentLabels.negatives = [];
@@ -89,11 +96,6 @@ $(document).ready(function() {
     $.each(data.positives, function(i, val) {
       data.positives[i] = mappings[val];
     });
-
-    $("<input />")
-      .attr("type", "hidden")
-      .attr("name", currentImg)
-      .attr("value", JSON.stringify(data))
-      .appendTo("#mturk_form");
+    workerAnswers[currentImg] = data;
   } 
 });

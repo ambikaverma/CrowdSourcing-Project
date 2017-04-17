@@ -14,11 +14,21 @@ var auditors = {
   "user_agent": false
 }
 
+$("<script />")
+  .attr("type", "text/javascript")
+  .attr("src", "js/turkey-lite/js/globals/jquery.ba-throttle-debounce.min.js")
+  .appendTo("head");
+
+$("<script />")
+  .attr("type", "text/javascript")
+  .attr("src", "js/turkey-lite/js/globals/visibility_changes.js")
+  .appendTo("head");
+
 for (var name in auditors) {
   if (auditors[name]) {
     $("<script />")
       .attr("type", "text/javascript")
-      .attr("src", "js/auditors/" + name + ".js")
-      .appendTo("head")
+      .attr("src", "js/turkey-lite/js/auditors/" + name + ".js")
+      .appendTo("head");
   }
 }

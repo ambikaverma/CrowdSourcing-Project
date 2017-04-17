@@ -1,9 +1,9 @@
 var imgs = [];
 var current = 0;
 var currentImg = -1;
-var currentLabels = {}
-var addedCategories = [];
+var currentLabels = {};
 var workerLabels = {};
+var workerAnswers = {};
 
 (function(key) {
   var regexS = "[\\?&]" + key + "=([^&#]*)";
