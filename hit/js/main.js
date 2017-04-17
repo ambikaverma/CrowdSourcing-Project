@@ -9,6 +9,7 @@ var workerLabels = {};
   var regexS = "[\\?&]" + key + "=([^&#]*)";
   var regex = new RegExp(regexS);
   var tmpURL = window.location.href;
+  tmpURL = decodeURIComponent(tmpURL);
   var results = regex.exec(tmpURL);
   if(results != null) {
     imgs = results[1].split(",");
