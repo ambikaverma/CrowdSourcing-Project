@@ -146,10 +146,8 @@ if (gup("assignmentId") == "ASSIGNMENT_ID_NOT_AVAILABLE") {
   // $("#submitButton").val("You must ACCEPT the HIT before you can submit the results.");
   $("#warning").show();
 } else {
-  var form = $("#mturk_form");
-  if (document.referrer && (document.referrer.indexOf("workersandbox") != -1)) {
-    form.action = "https://workersandbox.mturk.com/mturk/externalSubmit";
-  }
+  if (document.referrer && (document.referrer.indexOf("workersandbox") != -1))
+    $("#mturk_form").attr("action", "https://workersandbox.mturk.com/mturk/externalSubmit");
 }
 </script>
 
