@@ -31,11 +31,9 @@ function decode(strToDecode) {
 
 <input type='hidden' id='assignmentId' name='assignmentId' value=''>
 
-<div>
+<div id='instructions'>
 
 <p id='warning' class='important'><b>PLEASE ACCEPT THIS HIT BEFORE WORKING ON IT.</p></b><br>
-
-<div id='instructions'>
 
 <p><b class='important'>Instructions:</b> You will see a list of object categories predicted by a smart computer for a given image. Your job is to let the computer know if its predictions are correct or not. If a category is missing from the prediction, you should also let the computer know what that category is. If the image does not load, click the red button in the lower right corner. Press the <b>< Previous</b> and <b>Next ></b> buttons to navigate between images.</p>
 
@@ -78,48 +76,55 @@ function decode(strToDecode) {
 
 <div id='modal' class='modal'>
 
-  <div class="modal-content">
-    <h3>Select categories to add:</h3>
-    <table id='modal-values'>
-      <tr>
-        <td><input type='checkbox' class='categories' name='categories' value='5'>&nbsp;Airplane</td>
-        <td><input type='checkbox' class='categories' name='categories' value='63'>&nbsp;Couch</td>
-      </tr>
-      <tr>
-        <td><input type='checkbox' class='categories' name='categories' value='16'>&nbsp;Bird</td>
-        <td><input type='checkbox' class='categories' name='categories' value='18'>&nbsp;Dog</td>
-      </tr>
-      <tr>
-        <td><input type='checkbox' class='categories' name='categories' value='6'>&nbsp;Bus</td>
-        <td><input type='checkbox' class='categories' name='categories' value='19'>&nbsp;Horse</td>
-      </tr>
-      <tr>
-        <td><input type='checkbox' class='categories' name='categories' value='3'>&nbsp;Car</td>
-        <td><input type='checkbox' class='categories' name='categories' value='1'>&nbsp;Person</td>
-      </tr>
-      <tr>
-        <td><input type='checkbox' class='categories' name='categories' value='17'>&nbsp;Cat</td>
-        <td><input type='checkbox' class='categories' name='categories' value='7'>&nbsp;Train</td>
-      </tr>
-      <tr>
-        <td><button id='modal-ok' type='button'>OK</button>
-        <button id='modal-cancel' type='button'>Cancel</button></td>
-      </tr>
-    </table>
-  </div>
+<div class="modal-content">
+  <h3>Select categories to add:</h3>
+  <table>
+    <tr>
+      <td><input type='checkbox' class='categories' name='categories' value='5'>&nbsp;Airplane</td>
+      <td><input type='checkbox' class='categories' name='categories' value='63'>&nbsp;Couch</td>
+    </tr>
+    <tr>
+      <td><input type='checkbox' class='categories' name='categories' value='16'>&nbsp;Bird</td>
+      <td><input type='checkbox' class='categories' name='categories' value='18'>&nbsp;Dog</td>
+    </tr>
+    <tr>
+      <td><input type='checkbox' class='categories' name='categories' value='6'>&nbsp;Bus</td>
+      <td><input type='checkbox' class='categories' name='categories' value='19'>&nbsp;Horse</td>
+    </tr>
+    <tr>
+      <td><input type='checkbox' class='categories' name='categories' value='3'>&nbsp;Car</td>
+      <td><input type='checkbox' class='categories' name='categories' value='1'>&nbsp;Person</td>
+    </tr>
+    <tr>
+      <td><input type='checkbox' class='categories' name='categories' value='17'>&nbsp;Cat</td>
+      <td><input type='checkbox' class='categories' name='categories' value='7'>&nbsp;Train</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><button id='modal-ok' type='button'>OK</button>
+      <button id='modal-cancel' type='button'>Cancel</button></td>
+    </tr>
+  </table>
+</div>
 
 </div>
 
+<div id='feedback' class='modal'>
 
-<!-- <div id='feedback' class='section'>
-<h2>Feedback</h2><br>
+<div class="modal-content">
+  <h3>Feedback</h3>
+  <table>
+    <tr><td>Thank you for taking the time to complete this task. If you would like to provide us feedback regarding this HIT, please do so here. To submit your answers, please click the <b>Submit</b> button. To return to the task, press the <b>Go back</b> button.</td></tr>
 
-<p>Thank you for taking the time to complete this task. If you would like to provide us feedback regarding this HIT, please do so here:</p><br>
+    <tr><td><textarea name='feedback'></textarea></td></tr>
+    <tr>
+      <td><input id='submitButton' type='submit' name='Submit' value='Submit'>
+      <button id="submit-cancel" type='button'>Go back</button></td>
+    </tr>
+  </table>
+</div>
 
-<textarea name='feedback'></textarea>
-</div> -->
-
-<!-- <input id='submitButton' type='submit' name='Submit' value='Submit'> -->
+</div>
 
 </div>
 

@@ -14,6 +14,20 @@ $(document).ready(function() {
     nextImg(true, true);
   });
 
+  $("#submit-cancel").click(function() {
+    $("#feedback").css("display", "none");
+  });
+
+  $(window).click(function(event) {
+    if (event.target == $("#feedback")[0]) {
+      $("#feedback").css("display", "none");
+    }
+  });
+
+  $("#submitButton").click(function() {
+
+  });
+
   function checkAnswers() {
     var answersOk = true;
     $.each(currentLabels.addedCategories, function(i, val) {
@@ -41,7 +55,7 @@ $(document).ready(function() {
       saveLabels();
 
     if (current == imgs.length - 1) {
-      alert("done");
+      $("#feedback").css("display", "block");
       return;
     }
 
