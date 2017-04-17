@@ -25,7 +25,7 @@ $(document).ready(function() {
   });
 
   $("#submitButton").click(function() {
-    $(".label, input[type=checkbox]").remove();
+    $(".label, input[type=checkbox], #confidenceRange").remove();
   });
 
   function checkAnswers() {
@@ -83,7 +83,7 @@ $(document).ready(function() {
     currentLabels.confidence = parseInt($("#confidenceRange").val());
 
     var data = {
-      "positives": currentLabels.positives.slice,
+      "positives": currentLabels.positives.slice(),
       "confidence": currentLabels.confidence
     }
     $.each(data.positives, function(i, val) {

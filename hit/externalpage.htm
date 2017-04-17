@@ -34,8 +34,6 @@ function decode(strToDecode) {
 
 <div id='instructions'>
 
-<p id='warning' class='important'><b>PLEASE ACCEPT THIS HIT BEFORE WORKING ON IT.</p></b><br>
-
 <p><b class='important'>Instructions:</b> You will see a list of object categories predicted by a smart computer for a given image. Your job is to let the computer know if its predictions are correct or not. If a category is missing from the prediction, you should also let the computer know what that category is. If the image does not load, click the red button in the lower right corner. Press the <b>< Previous</b> and <b>Next ></b> buttons to navigate between images.</p>
 
 </div>
@@ -143,8 +141,10 @@ $("#assignmentId").val(gup("assignmentId"));
 if (gup("assignmentId") == "ASSIGNMENT_ID_NOT_AVAILABLE") {
   // If we"re previewing, disable the button and give it a helpful message
   $("#submitButton").attr("disabled", true)
-  // $("#submitButton").val("You must ACCEPT the HIT before you can submit the results.");
-  $("#warning").show();
+  $("*").click(function(evt) {
+    evt.stopPropagation();
+    alert("Please accept the HIT before working on it.");
+  });
 } else {
   if (document.referrer && (document.referrer.indexOf("workersandbox") != -1))
     $("#mturk_form").attr("action", "https://workersandbox.mturk.com/mturk/externalSubmit");
