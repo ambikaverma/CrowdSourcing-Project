@@ -26,7 +26,7 @@ function prepImg() {
   $("#confidenceRange").val(3)
   setConfidenceLabel();
 
-  $("img").attr("src", "../samples/" + currentImg + ".jpg");
+  $("img").attr("src", "../../samples/" + currentImg + ".jpg");
   $("#counter").text(current + 1);
 
   if (workerLabels[currentImg])
