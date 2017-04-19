@@ -14,6 +14,7 @@ var workerAnswers = {};
   if(results != null) {
     imgs = results[1].split(",");
     currentImg = imgs[current];
+    $("#total").text(imgs.length);
     prepImg();
   }
 })("imgs");
@@ -26,6 +27,7 @@ function prepImg() {
   setConfidenceLabel();
 
   $("img").attr("src", "../samples/" + currentImg + ".jpg");
+  $("#counter").text(current + 1);
 
   if (workerLabels[currentImg])
     getWorkerLabels();
