@@ -1,0 +1,10 @@
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/26201.jpg	game_equipment	0.5036	structure	0.100293	game_equipment	0.0852196	structure	0.0440295	building	0.0344064
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/23033.jpg	odd-toed_ungulate	0.160899	hunting_dog	0.145021	hunting_dog	0.108573	canine	0.0877703	canine	0.0828095
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/41867.jpg	passerine	0.94512	passerine	0.0329558	oscine	0.00390311	gallinaceous_bird	0.00390274	bird	0.00348822
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/1404.jpg	whole	0.409742	source_of_illumination	0.2539	device	0.0756896	accessory	0.0382077	device	0.0150836
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/1700.jpg	instrumentality	0.27689	garment	0.232415	canine	0.0718764	instrumentality	0.0450113	sporting_dog	0.0422029
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/32597.jpg	conveyance	0.0471858	self-propelled_vehicle	0.0380594	placental	0.0366355	signal	0.0329678	instrumentality	0.0232601
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/49151.jpg	furnishing	0.391453	furnishing	0.0928668	structure	0.0850235	barrier	0.0619479	artifact	0.0407105
+home/ambika/Downloads/CrowdSourcing-Project-master/samples/22874.jpg	dog	0.266402	furnishing	0.0774871	working_dog	0.0545317	instrumentality	0.0522445	equipment	0.039357
+home/ambika/Downloads/CrowdSourcing-Project-master/samples/22192.jpg	dog	0.287044	hunting_dog	0.117441	dog	0.102455	hunting_dog	0.0664362	hunting_dog	0.0544982
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/86250.jpg	musical_instrument	0.0630393	equipment	0.0595356	barrier	0.052051	artifact	0.0267044	furniture	0.0255545
