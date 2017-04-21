@@ -16,6 +16,6 @@
 
 cd ../..
 cd bin
-./loadHITs.sh $1 $2 $3 $4 $5 $6 $7 $8 $9 -label ../hit-cli/external_hit/task -input ../hit-cli/external_hit/task.input -question ../hit-cli/external_hit/task.question -properties ../hit-cli/external_hit/task.properties 
+./getResults.sh $1 $2 $3 $4 $5 $6 $7 $8 $9 -successfile ../mturk-clt/annotation/task.success -outputfile ../mturk-clt/annotation/task.results
 cd ..
-cd hit-cli/external_hit
+cd mturk-clt/annotation

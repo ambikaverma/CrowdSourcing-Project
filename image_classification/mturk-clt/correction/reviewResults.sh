@@ -17,6 +17,6 @@
 #!/usr/bin/env bash
 cd ../..
 cd bin
-./reviewResults.sh $1 $2 $3 $4 $5 $6 $7 $8 $9 -resultsfile ../hit-cli/external_hit/task.results
+./reviewResults.sh $1 $2 $3 $4 $5 $6 $7 $8 $9 -resultsfile ../mturk-clt/correction/task.results
 cd ..
-cd hit-cli/external_hit
+cd mturk-clt/correction

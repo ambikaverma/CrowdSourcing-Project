@@ -14,8 +14,9 @@
 # limitations under the License.
  
 
+#!/usr/bin/env bash
 cd ../..
 cd bin
-./getResults.sh $1 $2 $3 $4 $5 $6 $7 $8 $9 -successfile ../hit-cli/external_hit/task.success -outputfile ../hit-cli/external_hit/task.results
+./reviewResults.sh $1 $2 $3 $4 $5 $6 $7 $8 $9 -resultsfile ../mturk-clt/annotation/task.results
 cd ..
-cd hit-cli/external_hit
+cd mturk-clt/annotation

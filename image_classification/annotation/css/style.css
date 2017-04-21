@@ -39,14 +39,11 @@ table {
 
 table, th {
   padding: 5px;
-  /*border: 1px solid black;*/
   font-size: 18px;
 }
 
 td {
   padding: 10px;
-  /*border: 1px solid black;*/
-  /*width: 250px;*/
 }
 
 img {
@@ -67,7 +64,8 @@ img {
 }
 
 .nav {
-  padding: 15px 32px;
+  height: 54px;
+  padding: 8px 32px;
   text-align: center;
   font-size: 16px;
 }
@@ -95,5 +93,4 @@ img {
 #submit-cancel {
   background-color: Red;
   color: White;
-  /*margin-right: 5px;*/
 }

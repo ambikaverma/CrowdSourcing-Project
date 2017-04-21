@@ -16,6 +16,6 @@
 
 cd ../..
 cd bin
-./deleteHITs.sh $1 $2 $3 $4 $5 $6 $7 $8 $9  -successfile ../hit-cli/external_hit/task.success -approve -expire 
+./deleteHITs.sh $1 $2 $3 $4 $5 $6 $7 $8 $9  -successfile ../mturk-clt/correction/task.success -approve -expire 
 cd ..
-cd hit-cli/external_hit
+cd mturk-clt/correction
