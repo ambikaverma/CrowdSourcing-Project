@@ -1,8 +1,16 @@
-var canvas, context, startX, endX, startY, endY;
+var canvas = $("canvas")[0];
+var canvasImg;
+
+/*****************************************************************************
+ * http://stackoverflow.com/questions/17226133/drawing-a-rectangle-on-canvas *
+ ****************************************************************************/
+var context, startX, endX, startY, endY;
 var mouseIsDown = 0;
 
-function init() {
-  canvas = $("canvas")[0];
+// var drawn = 0;
+
+function init(imgObj) {
+  canvasImg = imgObj;
 
   $("canvas").mousedown(mouseDown);
   $("canvas").mousemove(mouseXY);
@@ -10,12 +18,12 @@ function init() {
 }
 
 function mouseUp(eve) {
-  if (mouseIsDown !== 0) {
+  if (mouseIsDown != 0) {
     mouseIsDown = 0;
     var pos = getMousePos(canvas, eve);
     endX = pos.x;
     endY = pos.y;
-    drawSquare(); //update on mouse-up
+    drawSquare();
   }
 }
 
@@ -24,11 +32,11 @@ function mouseDown(eve) {
   var pos = getMousePos(canvas, eve);
   startX = endX = pos.x;
   startY = endY = pos.y;
-  drawSquare(); //update
+  drawSquare();
 }
 
 function mouseXY(eve) {
-  if (mouseIsDown !== 0) {
+  if (mouseIsDown != 0) {
     var pos = getMousePos(canvas, eve);
     endX = pos.x;
     endY = pos.y;
@@ -46,9 +54,8 @@ function drawSquare() {
   var width = Math.abs(w);
   var height = Math.abs(h);
 
-  context.clearRect(0, 0, canvas.width, canvas.height);
-  // loadImage();
-             
+  context.drawImage(canvasImg, 0, 0, canvas.width, canvas.height);
+
   context.beginPath();
   context.rect(startX + offsetX, startY + offsetY, width, height);
   context.lineWidth = 3;
@@ -63,8 +70,7 @@ function getMousePos(canvas, evt) {
     y: evt.clientY - rect.top
   };
 }
-
-init();
+/*****************************************************************************/
 
 function loadImage() {
   $("img").attr("src", "../../samples/" + currentImg + ".jpg");
@@ -83,8 +89,10 @@ function loadImage() {
     $("img").css("display", "none"); // workaround for getting image dimensions
   }
   imgObj.src = currentImgSrc;
+
+  init(imgObj)
 }
 
 $("#resetBox").click(function() {
-
+  context.drawImage(canvasImg, 0, 0, canvas.width, canvas.height);
 });
