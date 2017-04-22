@@ -56,7 +56,7 @@ function getWorkerLabels() {
 
   $.each(currentLabels.addedCategories, function(i, val) {
     if (currentLabels.prelabels.indexOf(val) == -1)
-      addObj(val)
+      addObj(val);
   });
 
   $("#confidenceRange").val(currentLabels.confidence);
