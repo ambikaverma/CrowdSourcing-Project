@@ -1,0 +1,22 @@
+var mappings = {
+  1: "Person",
+  3: "Car",
+  7: "Train",
+  5: "Airplane",
+  6: "Bus",
+  16: "Bird",
+  17: "Cat",
+  18: "Dog",
+  19: "Horse",
+  63: "Couch",
+  "Airplane": 5,
+  "Bird": 16,
+  "Bus": 6,
+  "Car": 3,
+  "Cat": 17,
+  "Couch": 63,
+  "Dog": 18,
+  "Horse": 19,
+  "Person": 1,
+  "Train": 7
+};

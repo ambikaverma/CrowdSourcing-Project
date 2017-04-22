@@ -1,0 +1,159 @@
+<!-- This file needs to be hosted on an external server.  -->
+<html>
+
+<link rel='stylesheet' type='text/css' href='css/style.css'>
+<link rel='stylesheet' type='text/css' href='css/rangeSlider.css'>
+<link rel='stylesheet' type='text/css' href='css/modal.css'>
+
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js'></script>
+<script src='js/turkey-lite/js/turkey-lite.js'></script>
+<script language='Javascript'>
+// This method Gets URL Parameters (GUP)
+function gup(name) {
+  var regexS = "[\\?&]" + name + "=([^&#]*)";
+  var regex = new RegExp(regexS);
+  var tmpURL = window.location.href;
+  var results = regex.exec(tmpURL);
+  if (results == null)
+    return "";
+  else
+    return results[1];
+}
+
+// This method decodes the query parameters that were URL-encoded
+function decode(strToDecode) {
+  var encoded = strToDecode;
+  return unescape(encoded.replace(/\+/g,  ' '));
+}
+</script>
+
+<body>
+<form id='mturk_form' method='POST' action='https://www.mturk.com/mturk/externalSubmit'>
+
+<input type='hidden' id='assignmentId' name='assignmentId' value=''>
+
+<div id='instructions'>
+
+<p><b class='important'>Instructions:</b> A smart computer is trying to learn how to identify objects present in an image and it needs your help! Your job is to let the computer know what those categories are. Please click the <b>+ add another object</b> button to select categories from a given list. If the image does not load, click the red button in the lower right corner. Press the <b>< Prev</b> and <b>Next ></b> buttons to navigate between images.</p>
+
+</div>
+
+<div>
+
+<div id='task' class='section'>
+
+<table id='grid'>
+  <td id='left'>
+    <img>
+    <canvas></canvas>
+  </td>
+  <td id='right'>
+    <div>
+      <b>1. What objects are present in the image?</b><br><br>
+      <table id='inputs'>
+        <tr>
+          <td><button type='button' id='addLink'>+ add another object</button></td>
+        </tr>
+      </table>
+    </div><br>
+    <div>
+      <b>2. How confident are you in your answer?</b>
+      <table>
+        <tr><td><input id='confidenceRange' type='range' name='confidence' min='1' max='5'></td></tr>
+        <tr><td><p id='confidenceLabel'></p></td></tr>
+      </table>
+    </div><br>
+    <div>
+      <table id='navButtons'>
+        <tr>
+          <td><button type='button' id='prev' class='nav'>< Prev</button></td>
+          <td><button type='button' id='issue' class='nav'>Image did<br>not load</button></td>
+          <td><button type='button' id='next' class='nav'>Next ></button></td>
+          <td><span id='counter'></span>&nbsp;/ <span id='total'></span></td>
+        </tr>
+      </table>
+    </div>
+  </td>
+</table>
+</div>
+
+<div id='modal' class='modal'>
+
+<div class="modal-content">
+  <h3>Select categories to add:</h3>
+  <table>
+    <tr>
+      <td><input type='checkbox' class='categories' name='categories' value='5'>&nbsp;Airplane</td>
+      <td><input type='checkbox' class='categories' name='categories' value='63'>&nbsp;Couch</td>
+    </tr>
+    <tr>
+      <td><input type='checkbox' class='categories' name='categories' value='16'>&nbsp;Bird</td>
+      <td><input type='checkbox' class='categories' name='categories' value='18'>&nbsp;Dog</td>
+    </tr>
+    <tr>
+      <td><input type='checkbox' class='categories' name='categories' value='6'>&nbsp;Bus</td>
+      <td><input type='checkbox' class='categories' name='categories' value='19'>&nbsp;Horse</td>
+    </tr>
+    <tr>
+      <td><input type='checkbox' class='categories' name='categories' value='3'>&nbsp;Car</td>
+      <td><input type='checkbox' class='categories' name='categories' value='1'>&nbsp;Person</td>
+    </tr>
+    <tr>
+      <td><input type='checkbox' class='categories' name='categories' value='17'>&nbsp;Cat</td>
+      <td><input type='checkbox' class='categories' name='categories' value='7'>&nbsp;Train</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><button id='modal-ok' type='button'>OK</button>
+      <button id='modal-cancel' type='button'>Cancel</button></td>
+    </tr>
+  </table>
+</div>
+
+</div>
+
+<div id='feedback' class='modal'>
+
+<div class="modal-content">
+  <h3>Feedback</h3>
+  <table>
+    <tr><td>Thank you for taking the time to complete this task. If you would like to provide us feedback regarding this HIT, please do so here. To submit your answers, please click the <b>Submit</b> button. To return to the task, press the <b>Go back</b> button.</td></tr>
+
+    <tr><td><textarea name='feedback'></textarea></td></tr>
+    <tr>
+      <td><input id='submitButton' type='submit' name='Submit' value='Submit'>
+      <button id="submit-cancel" type='button'>Go back</button></td>
+    </tr>
+  </table>
+</div>
+
+</div>
+
+</div>
+
+</form>
+
+<script src='js/pre-labels.js'></script>
+<script src='js/rangeSlider.js'></script>
+<script src='js/main.js'></script>
+<script src='js/nav.js'></script>
+<script src='js/addObject.js'></script>
+
+<script language='Javascript'>
+$("#assignmentId").val(gup("assignmentId"));
+// Check if the worker is PREVIEWING the HIT or if they"ve ACCEPTED the HIT
+if (gup("assignmentId") == "ASSIGNMENT_ID_NOT_AVAILABLE") {
+  // If we"re previewing, disable the button and give it a helpful message
+  $("#submitButton").attr("disabled", true)
+  $("*").click(function(evt) {
+    evt.stopPropagation();
+    alert("Please accept the HIT before working on it.");
+  });
+} else {
+  if (document.referrer && (document.referrer.indexOf("workersandbox") != -1))
+    $("#mturk_form").attr("action", "https://workersandbox.mturk.com/mturk/externalSubmit");
+}
+</script>
+
+</body>
+</html>
