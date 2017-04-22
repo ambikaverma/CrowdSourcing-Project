@@ -1,10 +1,10 @@
 var imgs = [];
 var current = 0;
 var currentImg = -1;
+var currentImgSrc = "";
 var currentLabels = {};
 var workerLabels = {};
 var workerAnswers = {};
-var context;
 
 (function(key) {
   var regexS = "[\\?&]" + key + "=([^&#]*)";
@@ -27,6 +27,7 @@ function prepImg() {
   $("#confidenceRange").val(3)
   setConfidenceLabel();
 
+  currentImgSrc = "../../samples/" + currentImg + ".jpg";
   loadImage();
 
   $("#counter").text(current + 1);
