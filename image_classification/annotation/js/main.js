@@ -39,7 +39,7 @@ function getWorkerLabels() {
   currentLabels = workerLabels[currentImg];
 
   $.each(currentLabels.addedCategories, function(i, val) {
-    addObj(val)
+    addObj(val);
   });
 
   $("#confidenceRange").val(currentLabels.confidence);
