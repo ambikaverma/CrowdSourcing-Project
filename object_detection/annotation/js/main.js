@@ -21,6 +21,8 @@ var workerAnswers = {};
 })("imgs");
 
 function prepImg() {
+  drawn = 0;
+
   currentImg = imgs[current];
 
   $(".label").remove()
@@ -28,22 +30,21 @@ function prepImg() {
   setConfidenceLabel();
 
   currentImgSrc = "../../samples/" + currentImg + ".jpg";
-  loadImage();
 
   $("#counter").text(current + 1);
 
-  if (workerLabels[currentImg])
+  if (workerLabels[currentImg]) {
     getWorkerLabels();
-  else
+    loadImage(true);
+  } else {
     getPreLabels();
+    loadImage(false);
+  }
 }
 
 function getWorkerLabels() {
   currentLabels = workerLabels[currentImg];
 
-  $.each(currentLabels.addedCategories, function(i, val) {
-    addObj(val)
-  });
 
   $("#confidenceRange").val(currentLabels.confidence);
   setConfidenceLabel();
@@ -51,8 +52,7 @@ function getWorkerLabels() {
 
 function getPreLabels() {
   workerLabels[currentImg] = {
-    "addedCategories": [],
-    "positives": [],
+    "bbox": {},
     "confidence": 3
   };
   currentLabels = workerLabels[currentImg];

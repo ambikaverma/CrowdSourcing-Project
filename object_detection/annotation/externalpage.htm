@@ -34,7 +34,7 @@ function decode(strToDecode) {
 
 <div id='instructions'>
 
-<p><b class='important'>Instructions:</b> A smart computer is trying to learn how to identify objects present in an image and it needs your help! Your job is to let the computer know what those categories are. Please click the <b>+ add another object</b> button to select categories from a given list. If the image does not load, click the red button in the lower right corner. Press the <b>< Prev</b> and <b>Next ></b> buttons to navigate between images.</p>
+<p><b class='important'>Instructions:</b> A smart computer is trying to find the location of a certain object and needs your help! Your job is to help the computer by drawing a bounding box such that the box completely covers the object but does not cut off any part of it. Click and drag over the image to draw a box. If the image does not load, click the red button in the lower right corner. Press the <b>< Prev</b> and <b>Next ></b> buttons to navigate between images.</p>
 
 </div>
 
@@ -49,7 +49,7 @@ function decode(strToDecode) {
   </td>
   <td id='right'>
     <div>
-      <b>1. What objects are present in the image?</b><br><br>
+      <b>1. Click and drag over the image to draw a bounding box. Click the button below to start over.</b><br><br>
       <table id='inputs'>
         <tr>
           <td><button type='button' id='resetBox'>reset</button></td>
@@ -75,41 +75,6 @@ function decode(strToDecode) {
     </div>
   </td>
 </table>
-</div>
-
-<div id='modal' class='modal'>
-
-<div class="modal-content">
-  <h3>Select categories to add:</h3>
-  <table>
-    <tr>
-      <td><input type='checkbox' class='categories' name='categories' value='5'>&nbsp;Airplane</td>
-      <td><input type='checkbox' class='categories' name='categories' value='63'>&nbsp;Couch</td>
-    </tr>
-    <tr>
-      <td><input type='checkbox' class='categories' name='categories' value='16'>&nbsp;Bird</td>
-      <td><input type='checkbox' class='categories' name='categories' value='18'>&nbsp;Dog</td>
-    </tr>
-    <tr>
-      <td><input type='checkbox' class='categories' name='categories' value='6'>&nbsp;Bus</td>
-      <td><input type='checkbox' class='categories' name='categories' value='19'>&nbsp;Horse</td>
-    </tr>
-    <tr>
-      <td><input type='checkbox' class='categories' name='categories' value='3'>&nbsp;Car</td>
-      <td><input type='checkbox' class='categories' name='categories' value='1'>&nbsp;Person</td>
-    </tr>
-    <tr>
-      <td><input type='checkbox' class='categories' name='categories' value='17'>&nbsp;Cat</td>
-      <td><input type='checkbox' class='categories' name='categories' value='7'>&nbsp;Train</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td><button id='modal-ok' type='button'>OK</button>
-      <button id='modal-cancel' type='button'>Cancel</button></td>
-    </tr>
-  </table>
-</div>
-
 </div>
 
 <div id='feedback' class='modal'>

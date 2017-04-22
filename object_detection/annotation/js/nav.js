@@ -35,8 +35,8 @@ $(document).ready(function() {
   });
 
   function checkAnswers() {
-    if (!currentLabels.addedCategories.length) {
-      alert("Please make sure you've added at least one category.");
+    if (!drawn) {
+      alert("Please make sure you've drawn a bounding box.");
       return false;
     }
     return true;
@@ -48,8 +48,7 @@ $(document).ready(function() {
 
     if (error) {
       workerAnswers[currentImg] = "error";
-      currentLabels.addedCategories = [];
-      currentLabels.positives = [];
+      currentLabels.bbox = {};
       currentLabels.confidence = 3;
     }
     else
@@ -65,21 +64,15 @@ $(document).ready(function() {
   }
 
   function saveLabels() {
-    currentLabels.positives = [];
-
-    $.each(currentLabels.addedCategories, function(i, val) {
-      currentLabels.positives.push(val);
-    });
-
+    currentLabels.bbox = {
+      "startX": Math.floor(startX),
+      "endX": Math.floor(endX),
+      "startY": Math.floor(startY),
+      "endY": Math.floor(endY)
+    }
     currentLabels.confidence = parseInt($("#confidenceRange").val());
 
-    var data = {
-      "positives": currentLabels.positives.slice(),
-      "confidence": currentLabels.confidence
-    }
-    $.each(data.positives, function(i, val) {
-      data.positives[i] = mappings[val];
-    });
+    var data = $.extend({}, currentLabels)
     workerAnswers[currentImg] = data;
   } 
 });

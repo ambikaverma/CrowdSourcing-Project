@@ -1,13 +1,13 @@
 var canvas = $("canvas")[0];
 var canvasImg;
 
+var drawn = 0;
+
 /*****************************************************************************
  * http://stackoverflow.com/questions/17226133/drawing-a-rectangle-on-canvas *
  ****************************************************************************/
 var context, startX, endX, startY, endY;
 var mouseIsDown = 0;
-
-// var drawn = 0;
 
 function init(imgObj) {
   canvasImg = imgObj;
@@ -24,10 +24,14 @@ function mouseUp(eve) {
     endX = pos.x;
     endY = pos.y;
     drawSquare();
+    drawn = 1;
   }
 }
 
 function mouseDown(eve) {
+  if (drawn)
+    return;
+
   mouseIsDown = 1;
   var pos = getMousePos(canvas, eve);
   startX = endX = pos.x;
@@ -46,7 +50,6 @@ function mouseXY(eve) {
 }
 
 function drawSquare() {
-  // creating a square
   var w = endX - startX;
   var h = endY - startY;
   var offsetX = (w < 0) ? w : 0;
@@ -58,8 +61,8 @@ function drawSquare() {
 
   context.beginPath();
   context.rect(startX + offsetX, startY + offsetY, width, height);
-  context.lineWidth = 3;
-  context.strokeStyle = "red";
+  context.lineWidth = 2.5;
+  context.strokeStyle = "lime";
   context.stroke();
 }
 
@@ -72,7 +75,7 @@ function getMousePos(canvas, evt) {
 }
 /*****************************************************************************/
 
-function loadImage() {
+function loadImage(labels) {
   $("img").attr("src", "../../samples/" + currentImg + ".jpg");
   $("img").css("display", "block"); // workaround for getting image dimensions
 
@@ -87,12 +90,33 @@ function loadImage() {
 
     context.drawImage(imgObj, 0, 0, width, height);
     $("img").css("display", "none"); // workaround for getting image dimensions
+
+    if (labels) {
+      startX = currentLabels.bbox.startX;
+      startY = currentLabels.bbox.startY;
+      endX = currentLabels.bbox.endX;
+      endY = currentLabels.bbox.endY;
+
+      if (startX) {
+        drawSquare();
+        drawn = 1;
+      }
+    }
   }
   imgObj.src = currentImgSrc;
 
-  init(imgObj)
+  init(imgObj);
+}
+
+function resetPoints() {
+  startX = 0;
+  endX = 0;
+  startY = 0;
+  endY = 0;
 }
 
 $("#resetBox").click(function() {
   context.drawImage(canvasImg, 0, 0, canvas.width, canvas.height);
+  drawn = 0;
+  resetPoints();
 });
