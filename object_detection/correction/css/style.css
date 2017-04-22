@@ -70,11 +70,6 @@ img {
   font-size: 16px;
 }
 
-#modal button {
-  float: right;
-  margin: 14px;
-}
-
 #feedback textarea {
   width: 100%;
   max-width: 100%;

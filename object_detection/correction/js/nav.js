@@ -35,21 +35,11 @@ $(document).ready(function() {
   });
 
   function checkAnswers() {
-    if (!currentLabels.addedCategories.length) {
-      alert("Please make sure you've selected YES or NO for each category.");
+    if (!drawn) {
+      alert("Please make sure you've drawn a bounding box.");
       return false;
     }
-
-    var answersOk = true;
-    $.each(currentLabels.addedCategories, function(i, val) {
-      if (!$("input:radio[name=" + val + "]:checked").val()) {
-        alert("Please make sure you've selected YES or NO for each category.");
-        answersOk = false;
-      }
-      if (!answersOk)
-        return answersOk;
-    });
-    return answersOk;
+    return true;
   }
 
   function nextImg(ok, error) {
@@ -58,9 +48,7 @@ $(document).ready(function() {
 
     if (error) {
       workerAnswers[currentImg] = "error";
-      currentLabels.addedCategories = currentLabels.prelabels.slice();
-      currentLabels.positives = [];
-      currentLabels.negatives = [];
+      currentLabels.bbox = {};
       currentLabels.confidence = 3;
     }
     else
@@ -76,26 +64,15 @@ $(document).ready(function() {
   }
 
   function saveLabels() {
-    currentLabels.positives = [];
-    currentLabels.negatives = [];
-
-    $.each(currentLabels.addedCategories, function(i, val) {
-      var response = $("input:radio[name=" + val + "]:checked").val();
-      if (response == "yes")
-        currentLabels.positives.push(val);
-      else
-        currentLabels.negatives.push(val);
-    });
-
+    currentLabels.bbox = {
+      "startX": Math.floor(startX),
+      "endX": Math.floor(endX),
+      "startY": Math.floor(startY),
+      "endY": Math.floor(endY)
+    }
     currentLabels.confidence = parseInt($("#confidenceRange").val());
 
-    var data = {
-      "positives": currentLabels.positives.slice(),
-      "confidence": currentLabels.confidence
-    }
-    $.each(data.positives, function(i, val) {
-      data.positives[i] = mappings[val];
-    });
+    var data = $.extend({}, currentLabels)
     workerAnswers[currentImg] = data;
   } 
 });
