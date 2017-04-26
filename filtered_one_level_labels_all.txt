@@ -1,0 +1,99 @@
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/26201.jpg	puzzle	0.5036	fortification	0.100293	puzzle	0.0852196	farm_building	0.0440295	residence	0.0344064
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/23033.jpg	horse	0.160899	dog	0.145021	dog	0.108573	dog	0.0877703	dog	0.0828095
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/41867.jpg	bird	0.94512	bird	0.0329558	bird	0.00390311	bird	0.00390274	bird	0.00348822
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/1404.jpg	plaything	0.409742	lantern	0.2539			safety_belt	0.0382077	stringed_instrument	0.0150836
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/1700.jpg	ski	0.27689	coat	0.232415	dog	0.0718764	bike	0.0450113	dog	0.0422029
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/32597.jpg	bus	0.0471858	car	0.0380594	guinea pig	0.0366355	light	0.0329678	sharpener	0.0232601
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/49151.jpg	cabinet	0.391453	entertainment center	0.0928668	building	0.0850235	door	0.0619479	building	0.0407105
+home/ambika/Downloads/CrowdSourcing-Project-master/samples/22874.jpg	dog	0.266402	table	0.0774871	dog	0.0545317	heater	0.0522445	weight	0.039357
+home/ambika/Downloads/CrowdSourcing-Project-master/samples/22192.jpg	dog	0.287044	dog	0.117441	dog	0.102455	dog	0.0664362	dog	0.0544982
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/86250.jpg	piano	0.0630393	ball	0.0595356	door	0.052051	screen	0.0267044	couch	0.0255545
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/13415.jpg	train	0.211744			truck	0.137093	truck	0.0596692	truck	0.0509463
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/60456.jpg	sandbar	0.239704	shore	0.182138	bike	0.101631	swimsuit	0.0687124	ball	0.0633626
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/43734.jpg	bear	0.477591	dog	0.0864282	dog	0.0695748	dog	0.0581693	water body	0.0317313
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/5486.jpg	building	0.832765	platform	0.0659947	piano	0.0161463	building	0.0130703	building	0.00859356
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/31519.jpg	light	0.251285			timer	0.0463213	car	0.0352315	measuring_instrument	0.0302273
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/27756.jpg	light	0.956483	bus	0.010255	car	0.0072069	truck	0.00298307	lifting_device	0.00280215
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/43202.jpg	building	0.231662	car	0.183351	residence	0.0874067	ride	0.0353435	reservoir	0.0228788
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/10707.jpg	lamp	0.128362	bowed_stringed_instrument	0.118548	scarf	0.0471436	bowed_stringed_instrument	0.0464833		
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/18366.jpg	car	0.261946	car	0.127136	bus	0.111923	bus	0.0690542	building	0.0550492
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/23995.jpg	train	0.702813	train	0.227877	train	0.0586949	train	0.00336264	farm_machine	0.00252827
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/15956.jpg	horse	0.146744	cattle	0.114961	horse	0.0860399	dog	0.032912	gymnastic_apparatus	0.0289387
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/28273.jpg	cat	0.60569	dog	0.0888217	dog	0.0523759	dog	0.037124	dog	0.0182456
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/27946.jpg	bus	0.875438	car	0.0673102	bus	0.0405751			train	0.00367289
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/35282.jpg	sign	0.456214	light	0.150785	airplane	0.0935147	reservoir	0.0693131	airplane	0.0542278
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/28872.jpg	camel	0.0977025	dog	0.0627976	dog	0.0541963	dog	0.0392164	dog	0.0381372
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/23579.jpg	car	0.0695745	coat	0.0606268	helmet	0.0577169			dog	0.0477259
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/8016.jpg	bird	0.306132	bird	0.148251	bird	0.140143	bird	0.0551268	fox	0.0492115
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/56545.jpg	bird	0.678438	sloth	0.272825	bird	0.0135158	bird	0.0128829	bird	0.00632292
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/29577.jpg	hairpiece	0.159669	bird	0.0410679	hat	0.0405516	shop	0.0327833	jar	0.0303781
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/1342.jpg	shoe	0.0979416	electronic_equipment	0.0508564	bag	0.0507285	safety_belt	0.0492083	heater	0.0462701
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/18462.jpg	car	0.42611					car	0.0539317	truck	0.0279108
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/14831.jpg	dog	0.0631095	cat	0.055515	roof	0.0484472	dog	0.0322933	dog	0.0310686
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/39484.jpg	building	0.142524	car	0.141854	car	0.101078	light	0.0916766	truck	0.0748349
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/14450.jpg	mountain	0.280586	bicycle	0.129683	car	0.0887215			train	0.0393082
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/2988.jpg	dog	0.117248	dog	0.0918188	dog	0.0758932	dog	0.0426418	dog	0.0384591
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/51495.jpg	airplane wing	0.932463	mountain	0.0299014	mountain	0.00513846	natural_elevation	0.00422794	airplane	0.00294166
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/32941.jpg	submersible	0.433386	telephone	0.187588	measuring_instrument	0.0668578	handcart	0.0635098	pump	0.0384785
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/46882.jpg	ball	0.664469	bird	0.0541902	ball	0.0347303	fodder	0.0333636	ball	0.0207012
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/17425.jpg	portable_computer	0.349962	television	0.0543263	electronic_equipment	0.037965	portable_computer	0.0256685	radiotelephone	0.0247588
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/132121.jpg	building	0.749487	entertainment center	0.119007	television	0.0441931	display	0.0164574	table	0.0102717
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/36765.jpg	camel	0.629651	dog	0.0455506	dog	0.0393509	dog	0.0369681	dog	0.0259368
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/10720.jpg	dog	0.516208	dog	0.120384	elephant	0.0996083	elephant	0.0364391	bag	0.0321862
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/27874.jpg	car	0.150134	train	0.109266	building	0.0855916	electronic_equipment	0.0624123	train	0.0414466
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/74017.jpg	dog	0.118727	dog	0.0539002	dog	0.0527942	dog	0.0512136		
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/35672.jpg	dog	0.277586	dog	0.118129	dog	0.0717823	ball	0.0714763	dog	0.0461524
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/32811.jpg	electronic_equipment	0.48579	display	0.127347	television	0.111295	window_blind	0.0422626	personal_computer	0.0389204
+home/ambika/Downloads/CrowdSourcing-Project-master/samples/34321.jpg	dog	0.746437	dog	0.087865	dog	0.0470293	dog	0.025636	dog	0.0172141
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/58210.jpg	bird	0.460264	bird	0.316479	bird	0.155405	bird	0.011634	bird	0.0110697
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/42968.jpg	natural_elevation	0.220055	mountain	0.116036	farm_building	0.112143	shore	0.054604	dwelling	0.041111
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/21900.jpg	dog	0.14695	dog	0.125992	dog	0.123152			dog	0.0618617
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/20381.jpg	train	0.998497	train	0.00123358	train	0.000241171	train	2.63567e-05	car	1.3722e-06
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/28246.jpg	car	0.796541	bus	0.163807	train	0.0250655	train	0.0140805	train	0.000122766
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/711.jpg	convertible	0.528791	bedclothes	0.0773595	bed	0.0377356	table	0.0277236	furniture	0.0222473
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/3983.jpg			sled	0.390702	snowmobile	0.0853584	sled	0.0199812	truck	0.00257062
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/35671.jpg	horse	0.251173	horse	0.161994			buffalo	0.0942481	cattle	0.0270796
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/2881.jpg	fodder	0.633903	bridge	0.142035					astronomical_telescope	0.00935061
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/3793.jpg	bus	0.636641	bus	0.32196	train	0.0241566	car	0.00848658		
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/14635.jpg	piano	0.330659	building	0.282867	shop	0.0824347	piano	0.0423441	convertible	0.0387415
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/5037.jpg	car	0.776613	bus	0.114128	train	0.0808145	car	0.0128147	bus	0.0113516
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/21161.jpg	dog	0.0864656	dog	0.0550788	dog	0.0529278	dog	0.0490096	guinea pig	0.0337936
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/75118.jpg	airplane wing	0.727776	airplane	0.12183	airplane	0.115131	spacecraft	0.0151537	weapon	0.00894669
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/7207.jpg	necktie	0.29127	garment	0.234255	musical instrument	0.0746257	medical_instrument	0.069522	necktie	0.0338473
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/19432.jpg	sports equipment	0.959974	ball	0.0133956	ball	0.0102828	person	0.00701162		
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/60823.jpg	shop	0.0594434	shop	0.0589561	sled	0.046194	ball	0.0335898	shop	0.0294475
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/58492.jpg	rabbit	0.425042	wild_goat	0.0971107	bird	0.0632393	rabbit	0.043687	bird	0.0386473
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/33532.jpg	bird	0.405098	bird	0.278567	bird	0.186815	bird	0.0297306	bird	0.0143358
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/36942.jpg	dog	0.355525	dog	0.227884	dog	0.109025	dog	0.048838	dog	0.0487212
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/37470.jpg	window_blind	0.197027	screen	0.0684863	curtain	0.0622096	ape like animal	0.0604468	ape like animal	0.0596812
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/26765.jpg	bedclothes	0.416241	bag	0.084742			convertible	0.0266886		
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/97782.jpg	car	0.361863			car	0.0608413	bus	0.0479548		
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/13729.jpg	skirt	0.171251	weight	0.0850364			home_appliance	0.05131	cleaning equipment	0.0431927
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/18975.jpg	shed	0.471863			shore	0.0477109			bridge	0.0310302
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/46077.jpg	bike	0.659365	helmet	0.142137	bike	0.104216	bicycle	0.0367515	car	0.0168317
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/1584.jpg	train	0.341304	truck	0.321213	bus	0.146447	bus	0.116476	truck	0.0172639
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/20438.jpg	dog	0.301836	dog	0.0850981	dog	0.0603321	dog	0.0435175	dog	0.043049
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/12827.jpg	cap	0.145556	toiletry	0.107504	hairpiece	0.100255				
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/67608.jpg	airplane	0.521842	airplane wing	0.191429	airplane	0.174364	airplane	0.0368024	airplane	0.0142594
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/117310.jpg	trouser	0.0705439	skirt	0.0623084	home_appliance	0.0576454	weight	0.0538533	weight	0.0476965
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/8787.jpg	musical instrument	0.219417	musical instrument	0.0619844	shop	0.0491641			truck	0.0313851
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/22755.jpg	hand_glass	0.322991	mirror	0.214916	clock	0.0463058	fan	0.0307639		
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/54088.jpg	truck	0.539418	truck	0.378378			car	0.0116473	car	0.0114337
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/19455.jpg	table	0.11978	bed	0.099666	convertible	0.0824574	television	0.0386156	personal_computer	0.0385599
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/56739.jpg	light	0.0400563			horse	0.0357648			power_saw	0.0309741
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/7096.jpg	train	0.87369	train	0.10117	train	0.0177774	car	0.00459184	bus	0.00140482
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/11182.jpg	building	0.0740815	building	0.0633687	residence	0.0629533	car	0.0627644	reservoir	0.0428647
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/46761.jpg	elephant	0.612232	elephant	0.331439	elephant	0.0563055	swine	1.55048e-05	cat	2.68628e-06
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/20779.jpg	couch	0.128434	table	0.0943864	building	0.0662047	couch	0.0568936	building	0.0527826
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/12947.jpg	train	0.54528			sled	0.0355606	bus	0.0331497	train	0.0264706
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/6870.jpg	train	0.998062	train	0.00124808	train	0.000685132	train	4.26403e-06	car	7.3408e-07
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/40036.jpg	horse	0.320242	camel	0.053345	elephant	0.0442565	shed	0.0419978	horse	0.0404962
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/36990.jpg	bus	0.610933	train	0.238768	train	0.0501841	truck	0.0496613	car	0.0285751
+home/ambika/Downloads/CrowdSourcing-Project-master/samples/14257.jpg	trees	0.0847325			car	0.0797765	timer	0.0648765		
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/11181.jpg	trees	0.635136	structure	0.10074	cleaning equipment	0.0179898	memorial	0.0121263		
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/675.jpg	blower	0.287488	towel	0.242942	dispenser	0.0578001			wash basin	0.0280197
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/26393.jpg	train	0.999149	train	0.000511142	train	0.000330013	train	7.3998e-06	car	1.03226e-06
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/7722.jpg	wash basin	0.397226	wash basin	0.269567	wash basin	0.128061				
+home/ambika/Downloads/CrowdSourcing-Project-master/samples/47916.jpg	dog	0.138513	dog	0.0696658	dog	0.0695409	dog	0.0584213	dog	0.0460215
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/1029.jpg	airplane	0.397763	airplane wing	0.0642287	airplane	0.0530834				
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/9553.jpg	bird	0.248659	bird	0.210292	bird	0.152477	bird	0.136504	bird	0.0905828
