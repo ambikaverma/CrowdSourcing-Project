@@ -85,3 +85,15 @@ home/ambika/Downloads/CrowdSourcing-Project-master/samples/34321.jpg	canine	0.74
 /home/ambika/Downloads/CrowdSourcing-Project-master/samples/11182.jpg	structure	0.0740815	institution	0.0633687	building	0.0629533	container	0.0627644	vessel	0.0428647
 /home/ambika/Downloads/CrowdSourcing-Project-master/samples/46761.jpg	placental	0.612232	chordate	0.331439	placental	0.0563055	ungulate	1.55048e-05	carnivore	2.68628e-06
 /home/ambika/Downloads/CrowdSourcing-Project-master/samples/20779.jpg	furniture	0.128434	furnishing	0.0943864	artifact	0.0662047	furniture	0.0568936	artifact	0.0527826
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/12947.jpg	container	0.54528	motor_vehicle	0.0378402	conveyance	0.0355606	conveyance	0.0331497	public_transport	0.0264706
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/6870.jpg	wheeled_vehicle	0.998062	wheeled_vehicle	0.00124808	container	0.000685132	container	4.26403e-06	container	7.3408e-07
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/40036.jpg	odd-toed_ungulate	0.320242	ungulate	0.053345	placental	0.0442565	building	0.0419978	wheeled_vehicle	0.0404962
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/36990.jpg	conveyance	0.610933	container	0.238768	wheeled_vehicle	0.0501841	self-propelled_vehicle	0.0496613	container	0.0285751
+home/ambika/Downloads/CrowdSourcing-Project-master/samples/14257.jpg	protective_covering	0.0847325	device	0.0806361	container	0.0797765	measuring_instrument	0.0648765	implement	0.0624644
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/11181.jpg	protective_covering	0.635136	whole	0.10074	instrumentality	0.0179898	artifact	0.0121263	structure	0.00691166
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/675.jpg	instrumentality	0.287488	fabric	0.242942	instrumentality	0.0578001	implement	0.0413009	container	0.0280197
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/26393.jpg	wheeled_vehicle	0.999149	container	0.000511142	wheeled_vehicle	0.000330013	container	7.3998e-06	container	1.03226e-06
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/7722.jpg	instrumentality	0.397226	instrumentality	0.269567	container	0.128061	appliance	0.110238	flavorer	0.00876316
+home/ambika/Downloads/CrowdSourcing-Project-master/samples/47916.jpg	canine	0.138513	dog	0.0696658	canine	0.0695409	hunting_dog	0.0584213	canine	0.0460215
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/1029.jpg	craft	0.397763	instrumentality	0.0642287	aircraft	0.0530834	arthropod	0.0530526	implement	0.022906
+/home/ambika/Downloads/CrowdSourcing-Project-master/samples/9553.jpg	passerine	0.248659	passerine	0.210292	oscine	0.152477	passerine	0.136504	passerine	0.0905828
