@@ -33,6 +33,10 @@ p, ol {
   width: 50%;
 }
 
+canvas {
+  cursor: crosshair;
+}
+
 table {
   width: 100%;
 }
