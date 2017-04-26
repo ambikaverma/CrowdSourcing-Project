@@ -75,12 +75,14 @@ function getPreLabels() {
 
   var labels = prelabels[currentImg];
   $.each(labels, function(i, val) {
-    var label = mappings[val];
+    var label = i;
+    var confidence = val;
     currentLabels.prelabels.push(label);
     currentLabels.addedCategories.push(label);
     $("#inputs").prepend(
       "<tr class='label'>" +
         "<td>" + label + "</td>" +
+        "<td>" + confidence + "</td>" +
         "<td><input type='radio' name='" + label + "' value='yes'>&nbsp;Yes" +
         "&nbsp;&nbsp;" +
         "<input type='radio' name='" + label + "' value='no'>&nbsp;No</td>" +

@@ -93,9 +93,6 @@ $(document).ready(function() {
       "positives": currentLabels.positives.slice(),
       "confidence": currentLabels.confidence
     }
-    $.each(data.positives, function(i, val) {
-      data.positives[i] = mappings[val];
-    });
     workerAnswers[currentImg] = data;
   } 
 });
