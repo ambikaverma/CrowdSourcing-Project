@@ -50,7 +50,6 @@ function setFocus(mx, my) {
 }
 
 function drawImg() {
-  console.log("redrawing")
   context.clearRect(0, 0, canvas.width, canvas.height);
   context.save();
 
@@ -60,7 +59,6 @@ function drawImg() {
 }
 
 function handleScroll(e) {
-  console.log("testing scroll")
   e.preventDefault();
   e.stopPropagation();
 
