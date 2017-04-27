@@ -2,6 +2,9 @@ var canvas = $("canvas")[0];
 var context;
 var canvasImg;
 
+/*************************************************************************************
+ * http://stackoverflow.com/questions/27339747/zoom-and-pan-in-animated-html5-canvas *
+ ************************************************************************************/
 var canvasOffset = $(canvas).offset();
 var offsetX = canvasOffset.left;
 var offsetY = canvasOffset.top;
@@ -27,12 +30,8 @@ function init(imgObj) {
 
   setScale(scale);
 
-  drawImg();
-
-  $(canvas).mousedown(function(e){handleMouseDown(e);});
-
-  canvas.addEventListener('DOMMouseScroll',handleScroll,false);
-  canvas.addEventListener('mousewheel',handleScroll,false);
+  canvas.addEventListener("DOMMouseScroll", handleScroll, false);
+  canvas.addEventListener("mousewheel", handleScroll, false);
 }
 
 function setScale(newScale) {
@@ -41,76 +40,60 @@ function setScale(newScale) {
   imgHeight = parseInt(ih * scale);    
   imgLeft = parseInt(focusX - focusX1 * scale);
   imgTop = parseInt(focusY - focusY1 * scale);
-  drawImg();
 }
 
 function setFocus(mx, my) {
   focusX = mx;
   focusY = my;
   focusX1 = parseInt((mx - imgLeft) / scale);
-  focusY1=parseInt((my - imgTop) / scale);
-  drawImg();
+  focusY1 = parseInt((my - imgTop) / scale);
 }
 
 function drawImg() {
+  console.log("redrawing")
   context.clearRect(0, 0, canvas.width, canvas.height);
   context.save();
+
   context.drawImage(canvasImg, 0, 0, iw, ih, imgLeft, imgTop, imgWidth, imgHeight);
-  dot(context, focusX, focusY, "red");
+
   context.restore();
 }
 
-function dot(context, x, y, fill) {
-  context.beginPath();
-  context.arc(x, y, 4, 0, PI2);
-  context.closePath();
-  context.fillStyle = fill;
-  context.fill();
-  context.lineWidth = 2;
-  context.stroke();
-}
-
 function handleScroll(e) {
+  console.log("testing scroll")
   e.preventDefault();
   e.stopPropagation();
+
+  mouseX = parseInt(e.clientX - offsetX);
+  mouseY = parseInt(e.clientY - offsetY);
+  setFocus(mouseX, mouseY);
 
   var delta = e.wheelDelta ?  e.wheelDelta / 30 : e.detail ? -e.detail : 0;
   if (delta) {
     counter += delta;
     setScale(1 + counter / 100);
+    drawImg();
   }
 };
-
-function handleMouseDown(e) {
-  e.preventDefault();
-  e.stopPropagation();
-  mouseX = parseInt(e.clientX - offsetX);
-  mouseY = parseInt(e.clientY - offsetY);
-  setFocus(mouseX, mouseY);
-  drawImg();
-}
+/************************************************************************************/
 
 function loadImage(labels) {
-  $("img").attr("src", "../../samples/" + currentImg + ".jpg");
-  $("img").css("display", "block"); // workaround for getting image dimensions
-
   context = canvas.getContext("2d");
   var imgObj = new Image();
   imgObj.onload = function() {
-    // console.log(imgObj.width, imgObj.height)
-    console.log(this)
-    console.log(this.width, this.height)
-
-    var width = $("img").width();
-    var height = $("img").height();
+    var width = this.width;
+    var height = this.height;
 
     canvas.width = width;
     canvas.height = height;
 
     context.drawImage(imgObj, 0, 0, width, height);
-    $("img").css("display", "none"); // workaround for getting image dimensions
+    init(this);
   }
   imgObj.src = currentImgSrc;
-
-  init(imgObj);
 }
+
+$(canvas).dblclick(function() {
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  context.drawImage(canvasImg, 0, 0, canvas.width, canvas.height);
+});
