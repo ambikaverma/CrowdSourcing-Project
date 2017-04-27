@@ -91,7 +91,7 @@ function loadImage(labels) {
   imgObj.src = currentImgSrc;
 }
 
-$(canvas).dblclick(function() {
+$(canvas).click(function() {
   context.clearRect(0, 0, canvas.width, canvas.height);
   context.drawImage(canvasImg, 0, 0, canvas.width, canvas.height);
 
