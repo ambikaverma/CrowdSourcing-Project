@@ -28,7 +28,7 @@ function prepImg() {
   setConfidenceLabel();
 
   currentImgSrc = "../../samples/" + currentImg + ".jpg";
-  // $("img").attr("src", "../../samples/" + currentImg + ".jpg");
+
   $("#counter").text(current + 1);
 
   if (workerLabels[currentImg]) {

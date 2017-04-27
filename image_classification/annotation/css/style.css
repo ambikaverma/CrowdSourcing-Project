@@ -37,6 +37,10 @@ p, ol {
   text-align: center;
 }
 
+canvas {
+  cursor: crosshair;
+}
+
 table {
   width: 100%;
 }

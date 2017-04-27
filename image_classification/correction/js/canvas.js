@@ -96,4 +96,12 @@ function loadImage(labels) {
 $(canvas).dblclick(function() {
   context.clearRect(0, 0, canvas.width, canvas.height);
   context.drawImage(canvasImg, 0, 0, canvas.width, canvas.height);
+
+  imgLeft = 0;
+  imgTop = 0;
+  scale = 1.00;
+
+  setFocus(iw / 2 * scale, ih / 2 * scale);
+
+  setScale(scale);
 });
