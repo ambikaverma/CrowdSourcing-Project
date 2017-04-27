@@ -1,6 +1,7 @@
 var imgs = [];
 var current = 0;
 var currentImg = -1;
+var currentImgSrc = "";
 var currentLabels = {};
 var workerLabels = {};
 var workerAnswers = {};
@@ -26,13 +27,17 @@ function prepImg() {
   $("#confidenceRange").val(3)
   setConfidenceLabel();
 
-  $("img").attr("src", "../../samples/" + currentImg + ".jpg");
+  currentImgSrc = "../../samples/" + currentImg + ".jpg";
+
   $("#counter").text(current + 1);
 
-  if (workerLabels[currentImg])
+  if (workerLabels[currentImg]) {
     getWorkerLabels();
-  else
+    loadImage(true);
+  } else {
     getPreLabels();
+    loadImage(false);
+  }
 }
 
 function getWorkerLabels() {
