@@ -33,6 +33,15 @@ p, ol {
   width: 50%;
 }
 
+
+#left {
+  text-align: center;
+}
+
+canvas {
+  cursor: crosshair;
+}
+
 table {
   width: 100%;
 }
@@ -44,10 +53,6 @@ table, th {
 
 td {
   padding: 10px;
-}
-
-img {
-  width: 100%;
 }
 
 #confidenceLabel {
