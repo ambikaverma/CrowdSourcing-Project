@@ -34,7 +34,13 @@ function decode(strToDecode) {
 
 <div id='instructions'>
 
-<p><b class='important'>Instructions:</b> A smart computer is trying to learn how to identify objects present in an image and it needs your help! Your job is to let the computer know what those categories are. Please click the <b>+ add another object</b> button to select categories from a given list. Hover your cursor over the image and use your mousewheel to zoom in and out of the image. Click the image once to reset it. If the image does not load, click the red button in the lower right corner. Press the <b>< Prev</b> and <b>Next ></b> buttons to navigate between images.</p>
+<p><b class='important'>Instructions:</b> A smart computer is trying to learn how to identify objects in an image and needs your help! Your job is to let the computer learn which object categories are present in a given image. 
+<ul>
+  <li>You will be shown 10 images one by one. The following categories can be present in an image: <span class='important'>airplane, bird, bus, car, cat, couch, dog, horse, person, train</span>. Click the <b>+ add another object</b> button to select any combination of these categories to add. It is also possible for an image to have none of these categories; in this case, select <span class='important'>NONE_OF_THE_ABOVE</span> in the list.</li>
+  <li>Hover your cursor over the image and use your mousewheel to zoom in and out on a particular region of the image. Click the image once to reset it.</li>
+  <li>Press the <b>< Prev</b> and <b>Next ></b> buttons to navigate between images. If the image does not load, click the red button.</li>
+</ul>
+</p>
 
 </div>
 
@@ -100,6 +106,9 @@ function decode(strToDecode) {
     <tr>
       <td><input type='checkbox' class='categories' name='categories' value='17'>&nbsp;cat</td>
       <td><input type='checkbox' class='categories' name='categories' value='7'>&nbsp;train</td>
+    </tr>
+    <tr>
+      <td><input type='checkbox' class='categories' name='categories' value='-1'>&nbsp;<span class='important'>NONE_OF_THE_ABOVE</span></td>
     </tr>
     <tr>
       <td></td>

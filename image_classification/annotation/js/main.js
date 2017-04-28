@@ -26,7 +26,7 @@ function prepImg() {
   $("#confidenceRange").val(3)
   setConfidenceLabel();
 
-  currentImgSrc = "../../samples/" + currentImg + ".jpg";
+  currentImgSrc = "../../images/" + currentImg + ".jpg";
   
   $("#counter").text(current + 1);
 

@@ -25,6 +25,16 @@ p, ol {
   color: Red;
 }
 
+ul {
+  padding-left: 20px;
+  padding-right: 20px; 
+  font-size: 16px;
+}
+
+ul li {
+  padding: 2px;
+}
+
 #task {
   border: 1px solid black;
 }
