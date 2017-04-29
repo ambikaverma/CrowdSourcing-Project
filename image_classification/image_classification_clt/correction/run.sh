@@ -16,6 +16,6 @@
 
 cd ../..
 cd bin
-./loadHITs.sh $1 $2 $3 $4 $5 $6 $7 $8 $9 -label ../mturk-clt/correction/task -input ../mturk-clt/correction/task.input -question ../mturk-clt/correction/task.question -properties ../mturk-clt/correction/task.properties 
+./loadHITs.sh $1 $2 $3 $4 $5 $6 $7 $8 $9 -label ../image_classification_clt/correction/task -input ../image_classification_clt/correction/task.input -question ../image_classification_clt/correction/task.question -properties ../image_classification_clt/correction/task.properties 
 cd ..
-cd mturk-clt/correction
+cd image_classification_clt/correction

@@ -16,6 +16,6 @@
 
 cd ../..
 cd bin
-./getResults.sh $1 $2 $3 $4 $5 $6 $7 $8 $9 -successfile ../mturk-clt/annotation/task.success -outputfile ../mturk-clt/annotation/task.results
+./getResults.sh $1 $2 $3 $4 $5 $6 $7 $8 $9 -successfile ../image_classification_clt/annotation/task.success -outputfile ../image_classification_clt/annotation/task.results
 cd ..
-cd mturk-clt/annotation
+cd image_classification_clt/annotation

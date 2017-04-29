@@ -17,6 +17,6 @@
 #!/usr/bin/env bash
 cd ../..
 cd bin
-./reviewResults.sh $1 $2 $3 $4 $5 $6 $7 $8 $9 -resultsfile ../mturk-clt/correction/task.results
+./reviewResults.sh $1 $2 $3 $4 $5 $6 $7 $8 $9 -resultsfile ../image_classification_clt/correction/task.results
 cd ..
-cd mturk-clt/correction
+cd image_classification_clt/correction

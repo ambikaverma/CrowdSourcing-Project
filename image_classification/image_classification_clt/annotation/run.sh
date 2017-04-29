@@ -16,6 +16,6 @@
 
 cd ../..
 cd bin
-./loadHITs.sh $1 $2 $3 $4 $5 $6 $7 $8 $9 -label ../mturk-clt/annotation/task -input ../mturk-clt/annotation/task.input -question ../mturk-clt/annotation/task.question -properties ../mturk-clt/annotation/task.properties 
+./loadHITs.sh $1 $2 $3 $4 $5 $6 $7 $8 $9 -label ../image_classification_clt/annotation/task -input ../image_classification_clt/annotation/task.input -question ../image_classification_clt/annotation/task.question -properties ../image_classification_clt/annotation/task.properties 
 cd ..
-cd mturk-clt/annotation
+cd image_classification_clt/annotation
