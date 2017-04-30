@@ -59,6 +59,8 @@ function drawSquare() {
 
   context.drawImage(canvasImg, 0, 0, canvas.width, canvas.height);
 
+  drawPreBox();
+
   context.beginPath();
   context.rect(startX + offsetX, startY + offsetY, width, height);
   context.lineWidth = 2.5;
@@ -98,6 +100,7 @@ function loadImage(labels) {
         drawn = 1;
       }
     }
+    drawPreBox();
   }
   imgObj.src = currentImgSrc;
 
@@ -111,8 +114,25 @@ function resetPoints() {
   endY = 0;
 }
 
+function drawPreBox() {
+  var bbox = prelabels[currentImg].bbox;
+  var w = bbox.xmax - bbox.xmin;
+  var h = bbox.ymax - bbox.ymin;
+  var offsetX = (w < 0) ? w : 0;
+  var offsetY = (h < 0) ? h : 0;
+  var width = Math.abs(w);
+  var height = Math.abs(h);
+
+  context.beginPath();
+  context.rect(bbox.xmin + offsetX, bbox.ymin + offsetY, width, height);
+  context.lineWidth = 2.5;
+  context.strokeStyle = "orange";
+  context.stroke();
+}
+
 $("#resetBox").click(function() {
   context.drawImage(canvasImg, 0, 0, canvas.width, canvas.height);
+  drawPreBox();
   drawn = 0;
   resetPoints();
 });
