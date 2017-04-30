@@ -35,7 +35,18 @@ $(document).ready(function() {
   });
 
   function checkAnswers() {
-    if (!drawn) {
+    var prelabel = $("input[type=radio]:checked")[0];
+
+    if (!prelabel) {
+      alert("Please verify the predicted label.");
+      return false;
+    } else if (currentLabels.verifiedLabel && $(prelabel).val() == "yes") {
+      alert("There should only be one correct label.");
+      return false;
+    } else if (!currentLabels.verifiedLabel && $(prelabel).val() == "no") {
+      alert("Please add the correct label.");
+      return false;
+    } else if (!drawn) {
       alert("Please make sure you've drawn a bounding box.");
       return false;
     }
@@ -50,6 +61,7 @@ $(document).ready(function() {
       workerAnswers[currentImg] = "error";
       currentLabels.bbox = {};
       currentLabels.confidence = 3;
+      currentLabels.verifiedLabel = "";
     }
     else
       saveLabels();
@@ -72,7 +84,11 @@ $(document).ready(function() {
     }
     currentLabels.confidence = parseInt($("#confidenceRange").val());
 
-    var data = $.extend({}, currentLabels)
+    var data = {
+      "bbox": $.extend({}, currentLabels.bbox),
+      "confidence": currentLabels.confidence,
+      "label": currentLabels.verifiedLabel ? currentLabels.verifiedLabel : currentLabels.prelabel
+    };
     workerAnswers[currentImg] = data;
   } 
 });

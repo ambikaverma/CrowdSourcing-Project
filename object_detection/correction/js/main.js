@@ -29,6 +29,17 @@ function prepImg() {
   $("#confidenceRange").val(3)
   setConfidenceLabel();
 
+  var label = prelabels[currentImg].label;
+  $("#prelabel").text(label);
+  $("#inputs").prepend(
+    "<tr class='label'>" +
+      "<td>" + label + "</td>" +
+      "<td><input type='radio' name='" + label + "' value='yes'>&nbsp;Yes" +
+      "&nbsp;&nbsp;" +
+      "<input type='radio' name='" + label + "' value='no'>&nbsp;No</td>" +
+    "</tr>"
+  );
+
   currentImgSrc = "../../images/" + currentImg + ".jpg";
 
   $("#counter").text(current + 1);
@@ -45,6 +56,16 @@ function prepImg() {
 function getWorkerLabels() {
   currentLabels = workerLabels[currentImg];
 
+  var prelabel = currentLabels.prelabel;
+  var verifiedLabel = currentLabels.verifiedLabel;
+  if (!verifiedLabel) {
+    if (currentLabels.bbox["startX"])
+      $("input[name='" + prelabel + "'][value='yes'").prop("checked", true);
+  }
+  else {
+    $("input[name='" + prelabel + "'][value='no'").prop("checked", true);
+    addObj(verifiedLabel);
+  }
 
   $("#confidenceRange").val(currentLabels.confidence);
   setConfidenceLabel();
@@ -53,7 +74,10 @@ function getWorkerLabels() {
 function getPreLabels() {
   workerLabels[currentImg] = {
     "bbox": {},
-    "confidence": 3
+    "confidence": 3,
+    "corrected": false,
+    "prelabel": prelabels[currentImg].label,
+    "verifiedLabel": "",
   };
   currentLabels = workerLabels[currentImg];
 }
