@@ -24,6 +24,7 @@ function prepImg() {
   currentImg = imgs[current];
 
   $(".label").remove();
+  $("#inputs span").remove();
   $("#confidenceRange").val(3);
   setConfidenceLabel();
 
@@ -74,11 +75,19 @@ function getPreLabels() {
     "addedCategories": [],
     "positives": [],
     "negatives": [],
-    "confidence": 3
+    "confidence": 3,
+    "noPredictions": false
   };
   currentLabels = workerLabels[currentImg];
 
   var labels = prelabels[currentImg];
+
+  if (!labels) {
+    currentLabels.noPredictions = true;
+    $("#inputs").prepend("<span class='important'><b>No predictions provided, just click Next!</b></span>");
+    return;
+  }
+
   $.each(labels, function(i, val) {
     var label = i;
     var confidence = val;

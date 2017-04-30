@@ -22,8 +22,8 @@ var workerAnswers = {};
 function prepImg() {
   currentImg = imgs[current];
 
-  $(".label").remove()
-  $("#confidenceRange").val(3)
+  $(".label").remove();
+  $("#confidenceRange").val(3);
   setConfidenceLabel();
 
   currentImgSrc = "../../images/" + currentImg + ".jpg";
