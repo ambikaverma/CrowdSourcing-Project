@@ -49,6 +49,9 @@ $(document).ready(function() {
     } else if (!drawn) {
       alert("Please make sure you've drawn a bounding box.");
       return false;
+    } else if (!(endX - startX) || !(endY - startY)) {
+      alert("Please click 'reset' and redraw your bounding box.")
+      return false;
     }
     return true;
   }
