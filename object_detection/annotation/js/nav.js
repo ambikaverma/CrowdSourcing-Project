@@ -72,7 +72,15 @@ $(document).ready(function() {
     }
     currentLabels.confidence = parseInt($("#confidenceRange").val());
 
-    var data = $.extend({}, currentLabels)
+    var data = {
+      "bbox": {
+        "x": Math.min(currentLabels.bbox.startX, currentLabels.bbox.endX),
+        "y": Math.min(currentLabels.bbox.startY, currentLabels.bbox.endY),
+        "width": Math.abs(currentLabels.bbox.endX - currentLabels.bbox.startX),
+        "height": Math.abs(currentLabels.bbox.endY - currentLabels.bbox.startY)
+      },
+      "confidence": currentLabels.confidence
+    }
     workerAnswers[currentImg] = data;
   } 
 });

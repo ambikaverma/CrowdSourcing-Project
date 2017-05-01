@@ -84,8 +84,15 @@ $(document).ready(function() {
     }
     currentLabels.confidence = parseInt($("#confidenceRange").val());
 
+    console.log(currentLabels.bbox)
+
     var data = {
-      "bbox": $.extend({}, currentLabels.bbox),
+      "bbox": {
+        "x": Math.min(currentLabels.bbox.startX, currentLabels.bbox.endX),
+        "y": Math.min(currentLabels.bbox.startY, currentLabels.bbox.endY),
+        "width": Math.abs(currentLabels.bbox.endX - currentLabels.bbox.startX),
+        "height": Math.abs(currentLabels.bbox.endY - currentLabels.bbox.startY)
+      },
       "confidence": currentLabels.confidence,
       "label": currentLabels.verifiedLabel ? currentLabels.verifiedLabel : currentLabels.prelabel
     };
