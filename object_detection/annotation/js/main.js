@@ -29,7 +29,10 @@ function prepImg() {
   $("#confidenceRange").val(3)
   setConfidenceLabel();
 
-  currentImgSrc = "../../samples/" + currentImg + ".jpg";
+  var category = groundtruth[currentImg][0];
+  $("#category").text(mappings[category]);
+
+  currentImgSrc = "../../images/" + currentImg + ".jpg";
 
   $("#counter").text(current + 1);
 
