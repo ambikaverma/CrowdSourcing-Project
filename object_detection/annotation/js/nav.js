@@ -25,7 +25,7 @@ $(document).ready(function() {
   });
 
   $("#submitButton").click(function() {
-    $(".label, input[type=checkbox], #confidenceRange").remove();
+    $("#confidenceRange").remove();
 
     $("<input />")
       .attr("type", "hidden")
