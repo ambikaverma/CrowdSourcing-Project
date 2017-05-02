@@ -36,7 +36,7 @@ function decode(strToDecode) {
 
 <p><b class='important'>Instructions:</b> A smart computer is trying to learn the location of a certain object and needs your help! Your job is to draw a bounding box around the object the computer is looking for.
 <ul>
-  <li>You will be shown 10 images one by one. Each image will have an object category the computer is looking for. Draw a bounding box by clicking and dragging over the image. <span class='important'>If there are multiple instances of the object, draw a box around the instance you believe is the most prominent.</span></li>
+  <li>You will be shown 10 images one by one. Each image will have an object category the computer is looking for. Draw a bounding box by clicking and dragging over the image. <span class='important'>If there are multiple instances of the object, draw a box around the instance you believe is the most prominent. Otherwise, draw a box around the centermost instance.</span></li>
   <li>Draw your bounding box such that the box completely covers the object (including obscured parts) but does not cut off any part of it.</li>
   <li>Rate your confidence using the slider. Values range from 1 (<i>Not at all</i>) to 5 (<i>Completely</i>).</li>
   <li>Press the <b>< Prev</b> and <b>Next ></b> buttons to navigate between images. If the image does not load, click the red button. Once you have reached the last image, press <b>Next ></b> to optionally provide feedback and submit your work.</li>
@@ -55,7 +55,7 @@ function decode(strToDecode) {
   </td>
   <td id='right'>
     <div>
-      <b>1. Click and drag over the image to draw a bounding box around the <span id='category' class='important'></span>. If there are multiple instances, draw a box over the most prominent instance. Click the button below to start over. Be careful not to drag your cursor outside the image.</b><br><br>
+      <b>1. Click and drag over the image to draw a bounding box around the <span id='category' class='important'></span>. Click the button below to start over. Be careful not to drag your cursor outside the image.</b><br><br>
       <table id='inputs'>
         <tr>
           <td><button type='button' id='resetBox'>reset</button></td>
