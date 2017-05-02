@@ -38,7 +38,7 @@ function decode(strToDecode) {
 <ul>
   <li>You will be shown 10 images one by one. Each image will have a detected object consisting of a bounding box (orange box) and category label (red text). Answer the following questions:</li>
   <ul>
-    <li>Does the bounding box surround an object (such as a person or a car)? Select <i>Yes</i> or <i>No</i>.</li>
+    <li>Does the bounding box surround or partially contain an object (such as a person or a car)? Select <i>Yes</i> or <i>No</i>.</li>
     <li>Is the category label consistent with the object in the bounding box? Select <i>Yes</i> or <i>No</i>. If you selected <i>No</i> for the previous question, you should select <i>No</i> for this question as well.</li>
   </ul>
   <li>Rate your confidence using the slider. Values range from 1 (<i>Not at all</i>) to 5 (<i>Completely</i>).</li>
@@ -58,7 +58,7 @@ function decode(strToDecode) {
   </td>
   <td id='right'>
     <div>
-      <b>1. Does the bounding box surround an object (such as a person or a car)?</b><br><br>
+      <b>1. Does the bounding box surround or partially contain an object (such as a person or a car)?</b><br><br>
       <table id='verifyBox'>
         <tr>
           <td><input type='radio' name='verifybox' value='yes'>&nbsp;Yes&nbsp;&nbsp;
