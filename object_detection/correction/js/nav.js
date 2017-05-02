@@ -25,7 +25,7 @@ $(document).ready(function() {
   });
 
   $("#submitButton").click(function() {
-    $(".label, #confidenceRange").remove();
+    $(".label, #modal, #confidenceRange").remove();
 
     $("<input />")
       .attr("type", "hidden")
