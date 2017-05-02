@@ -25,7 +25,7 @@ $(document).ready(function() {
   });
 
   $("#submitButton").click(function() {
-    $(".label, input[type=radio], #confidenceRange").remove();
+    $("#verifyBox, #verifylabel, #confidenceRange").remove();
 
     $("<input />")
       .attr("type", "hidden")
