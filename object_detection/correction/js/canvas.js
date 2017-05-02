@@ -130,6 +130,21 @@ function drawPreBox() {
   context.stroke();
 }
 
+$("#copy").click(function() {
+  context.drawImage(canvasImg, 0, 0, canvas.width, canvas.height);
+  resetPoints();
+
+  var bbox = prelabels[currentImg].bbox;
+  startX = bbox.xmin;
+  endX = bbox.xmax;
+  startY = bbox.ymin;
+  endY = bbox.ymax;
+
+  drawSquare();
+  
+  drawn = 1;
+});
+
 $("#resetBox").click(function() {
   context.drawImage(canvasImg, 0, 0, canvas.width, canvas.height);
   drawPreBox();

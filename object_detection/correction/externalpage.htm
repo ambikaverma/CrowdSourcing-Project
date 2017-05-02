@@ -36,7 +36,7 @@ function decode(strToDecode) {
 
 <p><b class='important'>Instructions:</b> A smart computer is trying to predict the location of a certain object and needs your help! Your job is to "correct" the computer's bounding box by drawing over it with your own.
 <ul>
-  <li>You will be shown 10 images one by one. Each image will have a predicted label (red text) and bounding box (orange rectangle) from the computer. Verify if the predicted label is correct by choosing <i>Yes</i> or <i>No</i>. Draw the correct bounding box by clicking and dragging over the image. If the predicted bounding box is correct, simply draw over the orange box.</li>
+  <li>You will be shown 10 images one by one. Each image will have a predicted label (red text) and bounding box (orange rectangle) from the computer. Verify if the predicted label is correct by choosing <i>Yes</i> or <i>No</i>. Draw the correct bounding box by clicking and dragging over the image. If the predicted bounding box is correct, click the <b>copy</b> button to copy the predicted box.</li>
   <li>Draw your bounding box such that the box completely covers the object (including obscured parts) but does not cut off any part of it. If the orange box covers multiple instances, draw a box around the object that is covered most.</li>
   <li>Rate your confidence using the slider. Values range from 1 (<i>Not at all</i>) to 5 (<i>Completely</i>).</li>
   <li>Press the <b>< Prev</b> and <b>Next ></b> buttons to navigate between images. If the image does not load, click the red button. Once you have reached the last image, press <b>Next ></b> to optionally provide feedback and submit your work.</li>
@@ -61,8 +61,14 @@ function decode(strToDecode) {
       </table>
     </div><br>
     <div>
-      <b>2. Click and drag over the image to draw an improved bounding box. Click the button below to start over. Be careful not to drag your cursor outside the image.</b><br><br>
-      <table><tr><td><button type='button' id='resetBox'>reset</button></td></tr></table>
+      <b>2. Click and drag over the image to draw an improved bounding box or click the 'copy' button if the prediction is already well-defined. Click the 'reset' button below to start over. Be careful not to drag your cursor outside the image.</b><br><br>
+      <table>
+        <tr>
+          <td><button type='button' id='copy'>copy</button>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <button type='button' id='resetBox'>reset</button></td>
+        </tr>
+      </table>
     </div><br>
     <div>
       <b>3. How confident are you in your answer?</b>
