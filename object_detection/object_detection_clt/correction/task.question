@@ -4,6 +4,6 @@ used to perform the merging of variables into template files.  You can learn mor
 -->
 <ExternalQuestion xmlns="http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2006-07-14/ExternalQuestion.xsd">
     <ExternalURL>https://cvc.ischool.utexas.edu/~budang/OD/correction/externalpage.htm?imgs=${helper.urlencode($imgs)}</ExternalURL>
-    <FrameHeight>800</FrameHeight>
+    <FrameHeight>900</FrameHeight>
 </ExternalQuestion>
 
