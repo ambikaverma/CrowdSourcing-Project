@@ -10,6 +10,6 @@ images = [annotation['image'] for annotation in annotations if annotation['answe
 images = sorted([images[i] for i in random.sample(range(len(images)), num_samples)])
 
 # save list of images to disk
-with open('./vizwiz.txt', 'w') as handle:
+with open('./images.txt', 'w') as handle:
     handle.write('\n'.join(images))
 

@@ -48,4 +48,7 @@ Temporary Items
 
 # Other
 hit-cli/logs
+images
+pycocotools
+venv
 */*.jpg
