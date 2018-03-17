@@ -51,4 +51,5 @@ hit-cli/logs
 images
 pycocotools
 venv
-*/*.jpg
+*.jpg
+*.zip

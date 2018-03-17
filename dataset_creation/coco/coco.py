@@ -21,12 +21,11 @@ for cat in categories:
     imgIds = [imgIds[i] for i in random.sample(range(len(imgIds)), 25)]
     images += imgIds
 
-# remove duplicates
+# normalize image names
 images = [str(image).zfill(12) + '.jpg' for image in images]
 images = sorted(list(set(images)))
 
 # save list of images to disk
-images = sorted(images)
 with open('./images.txt', 'w') as handle:
     handle.write('\n'.join(images))
 
