@@ -22,7 +22,12 @@ for category in categories:
         if entry[-2:] == ' 1':
             category_images.append(entry.split(' ')[0] + '.jpg')
 
-    images += [category_images[i] for i in random.sample(range(len(category_images)), 25)]
+    new_images = [category_images[i] for i in random.sample(range(len(category_images)), 25)]
+
+    while len(set(images).intersection(set(new_images))):
+        new_images = [category_images[i] for i in random.sample(range(len(category_images)), 25)]
+
+    images += new_images
 
 # save list of images to disk
 images = sorted(images)
