@@ -29,7 +29,7 @@ $(document).ready(function() {
 });
 
 function addObj(category) {
-  $($("#addLink").parents()[1]).before(
+  $("#inputs tr:last").before(
     "<tr class='label'>" +
       "<td>" + category + "</td>" +
       "<td>" +

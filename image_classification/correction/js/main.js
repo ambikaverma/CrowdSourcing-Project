@@ -49,7 +49,7 @@ function getWorkerLabels() {
   currentLabels = workerLabels[currentImg];
 
   $.each(currentLabels.prelabels, function(i, val) {
-    $("#inputs").prepend(
+    $("#inputs tr:first").after(
       "<tr class='label'>" +
         "<td>" + val + "</td>" +
         "<td><input type='radio' name='" + val + "' value='yes'>&nbsp;Yes" +
@@ -84,7 +84,7 @@ function getPreLabels() {
     var label = i;
     currentLabels.prelabels.push(label);
     currentLabels.addedCategories.push(label);
-    $("#inputs").prepend(
+    $("#inputs tr:first").after(
       "<tr class='label'>" +
         "<td>" + label + "</td>" +
         "<td><input type='radio' name='" + label + "' value='yes'>&nbsp;Yes" +
