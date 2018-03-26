@@ -20,14 +20,18 @@ var workerAnswers = {};
   }
 })("imgs");
 
+$("document").ready(function() {
+  $(".accordion").accordion({
+    collapsible: true,
+    active: 0
+  });
+});
+
 function prepImg() {
   currentImg = imgs[current];
 
   $("input[name='verifybox']").prop("checked", false);
   $("input[name='verifylabel']").prop("checked", false);
-
-  $("#confidenceRange").val(3)
-  setConfidenceLabel();
 
   var category = prelabels[currentImg].label;
   $("#category").text(category);
@@ -50,16 +54,12 @@ function getWorkerLabels() {
 
   $("input[name='verifybox'][value='" + currentLabels.bbox + "']").prop("checked", true);
   $("input[name='verifylabel'][value='" + currentLabels.label + "']").prop("checked", true);
-
-  $("#confidenceRange").val(currentLabels.confidence);
-  setConfidenceLabel();
 }
 
 function getPreLabels() {  
   workerLabels[currentImg] = {
     "bbox": "",
     "label": "",
-    "confidence": 3
   };
   currentLabels = workerLabels[currentImg];
 }

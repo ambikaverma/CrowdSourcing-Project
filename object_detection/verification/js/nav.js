@@ -25,8 +25,6 @@ $(document).ready(function() {
   });
 
   $("#submitButton").click(function() {
-    $("#verifyBox, #verifylabel, #confidenceRange").remove();
-
     $("<input />")
       .attr("type", "hidden")
       .attr("name", "labels")
@@ -54,7 +52,6 @@ $(document).ready(function() {
 
     if (error) {
       workerAnswers[currentImg] = "error";
-      currentLabels.confidence = 3;
     }
     else
       saveLabels();
@@ -71,7 +68,6 @@ $(document).ready(function() {
   function saveLabels() {
     currentLabels.bbox = $($("input[name='verifybox']:checked")[0]).val();
     currentLabels.label = $($("input[name='verifylabel']:checked")[0]).val();
-    currentLabels.confidence = parseInt($("#confidenceRange").val());
 
     var data = $.extend({}, currentLabels)
     workerAnswers[currentImg] = data;
