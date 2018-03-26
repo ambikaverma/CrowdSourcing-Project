@@ -31,11 +31,11 @@ $(document).ready(function() {
 function addObj(category) {
   $($("#addLink").parents()[1]).before(
     "<tr class='label'>" +
-      "<td>" + category + "</td><td></td>" +
+      "<td>" + category + "</td>" +
       "<td>" +
         "<input type='radio' name='" + category + "' value='yes' disabled checked>&nbsp;Yes" + 
         "&nbsp;&nbsp;&nbsp;&nbsp;" +
-        "<button type='button' class='del'>Delete</button>" + 
+        "<button type='button' class='del btn btn-danger btn-sm'>Delete</button>" + 
       "</td>" +
     "</tr>"
   );

@@ -20,12 +20,17 @@ var workerAnswers = {};
   }
 })("imgs");
 
+$("document").ready(function() {
+  $(".accordion").accordion({
+    collapsible: true,
+    active: 0
+  });
+});
+
 function prepImg() {
   currentImg = imgs[current];
 
   $(".label").remove();
-  $("#confidenceRange").val(3);
-  setConfidenceLabel();
 
   currentImgSrc = "../../images/" + currentImg + ".jpg";
 
@@ -63,9 +68,6 @@ function getWorkerLabels() {
     if (currentLabels.prelabels.indexOf(val) == -1)
       addObj(val);
   });
-
-  $("#confidenceRange").val(currentLabels.confidence);
-  setConfidenceLabel();
 }
 
 function getPreLabels() {
@@ -74,20 +76,17 @@ function getPreLabels() {
     "addedCategories": [],
     "positives": [],
     "negatives": [],
-    "confidence": 3
   };
   currentLabels = workerLabels[currentImg];
 
   var labels = prelabels[currentImg];
   $.each(labels, function(i, val) {
     var label = i;
-    var confidence = val;
     currentLabels.prelabels.push(label);
     currentLabels.addedCategories.push(label);
     $("#inputs").prepend(
       "<tr class='label'>" +
         "<td>" + label + "</td>" +
-        "<td>" + confidence + "</td>" +
         "<td><input type='radio' name='" + label + "' value='yes'>&nbsp;Yes" +
         "&nbsp;&nbsp;" +
         "<input type='radio' name='" + label + "' value='no'>&nbsp;No</td>" +

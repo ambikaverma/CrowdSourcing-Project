@@ -155,7 +155,7 @@ $("#assignmentId").val(gup("assignmentId"));
 // Check if the worker is PREVIEWING the HIT or if they"ve ACCEPTED the HIT
 if (gup("assignmentId") == "ASSIGNMENT_ID_NOT_AVAILABLE") {
   // If we"re previewing, disable the button and give it a helpful message
-  $("#submitButton").attr("disabled", true)
+  $("#submitButton").attr("disabled", true);
   $(".accordion").accordion({active: 0});
   $("*").click(function(evt) {
     evt.stopPropagation();
