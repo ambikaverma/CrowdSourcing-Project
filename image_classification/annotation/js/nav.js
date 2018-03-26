@@ -25,7 +25,7 @@ $(document).ready(function() {
   });
 
   $("#submitButton").click(function() {
-    $(".label, input[type=checkbox], #confidenceRange").remove();
+    $(".label, input[type=checkbox]").remove();
 
     $("<input />")
       .attr("type", "hidden")
@@ -50,7 +50,6 @@ $(document).ready(function() {
       workerAnswers[currentImg] = "error";
       currentLabels.addedCategories = [];
       currentLabels.positives = [];
-      currentLabels.confidence = 3;
     }
     else
       saveLabels();
@@ -71,11 +70,9 @@ $(document).ready(function() {
       currentLabels.positives.push(val);
     });
 
-    currentLabels.confidence = parseInt($("#confidenceRange").val());
 
     var data = {
       "positives": currentLabels.positives.slice(),
-      "confidence": currentLabels.confidence
     }
     $.each(data.positives, function(i, val) {
       data.positives[i] = mappings[val];

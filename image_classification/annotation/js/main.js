@@ -19,12 +19,17 @@ var workerAnswers = {};
   }
 })("imgs");
 
+$("document").ready(function() {
+  $(".accordion").accordion({
+    collapsible: true,
+    active: 0
+  });
+});
+
 function prepImg() {
   currentImg = imgs[current];
 
   $(".label").remove();
-  $("#confidenceRange").val(3);
-  setConfidenceLabel();
 
   currentImgSrc = "../../images/" + currentImg + ".jpg";
   
@@ -45,16 +50,12 @@ function getWorkerLabels() {
   $.each(currentLabels.addedCategories, function(i, val) {
     addObj(val);
   });
-
-  $("#confidenceRange").val(currentLabels.confidence);
-  setConfidenceLabel();
 }
 
 function getPreLabels() {
   workerLabels[currentImg] = {
     "addedCategories": [],
-    "positives": [],
-    "confidence": 3
+    "positives": []
   };
   currentLabels = workerLabels[currentImg];
 }

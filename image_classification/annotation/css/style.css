@@ -69,17 +69,19 @@ img {
   width: auto;
 }
 
-#confidenceLabel {
-  text-align: center;
+.label {
+  color: black;
+  font-size: 18px;
+  display: block;
+}
+
+.label td {
+  width: 100px;
+  text-align: left;
 }
 
 #navButtons {
   text-align: center;
-}
-
-#issue {
-  background-color: red;
-  color: white;
 }
 
 .nav {
@@ -105,11 +107,5 @@ img {
   font-size: 14px;
   height: 30px;
   min-width: 100px;
-  background: Lime;
   margin: 5px;
-}
-
-#submit-cancel {
-  background-color: Red;
-  color: White;
 }

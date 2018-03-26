@@ -29,12 +29,12 @@ $(document).ready(function() {
 });
 
 function addObj(category) {
-  $($("#addLink").parents()[1]).before(
+  $("#inputs tr:last").before(
     "<tr class='label'>" +
       "<td>" + category + "</td>" +
       "<td>" +
         "<input type='hidden' name='" + category + "' value='yes' disabled checked>" + 
-        "<button type='button' class='del'>Delete</button>" + 
+        "<button type='button' class='del btn btn-danger btn-sm'>Delete</button>" + 
       "</td>" +
     "</tr>"
   );
