@@ -25,8 +25,6 @@ $(document).ready(function() {
   });
 
   $("#submitButton").click(function() {
-    $("#confidenceRange").remove();
-
     $("<input />")
       .attr("type", "hidden")
       .attr("name", "labels")
@@ -52,7 +50,6 @@ $(document).ready(function() {
     if (error) {
       workerAnswers[currentImg] = "error";
       currentLabels.bbox = {};
-      currentLabels.confidence = 3;
     }
     else
       saveLabels();
@@ -73,7 +70,6 @@ $(document).ready(function() {
       "startY": Math.floor(startY),
       "endY": Math.floor(endY)
     }
-    currentLabels.confidence = parseInt($("#confidenceRange").val());
 
     var data = {
       "bbox": {
@@ -82,7 +78,6 @@ $(document).ready(function() {
         "width": Math.abs(currentLabels.bbox.endX - currentLabels.bbox.startX),
         "height": Math.abs(currentLabels.bbox.endY - currentLabels.bbox.startY)
       },
-      "confidence": currentLabels.confidence
     }
     workerAnswers[currentImg] = data;
   } 

@@ -20,14 +20,19 @@ var workerAnswers = {};
   }
 })("imgs");
 
+$("document").ready(function() {
+  $(".accordion").accordion({
+    collapsible: true,
+    active: 0
+  });
+});
+
 function prepImg() {
   drawn = 0;
 
   currentImg = imgs[current];
 
   $(".label").remove()
-  $("#confidenceRange").val(3)
-  setConfidenceLabel();
 
   var category = groundtruth[currentImg][0];
   $("#category").text(mappings[category]);
@@ -47,16 +52,11 @@ function prepImg() {
 
 function getWorkerLabels() {
   currentLabels = workerLabels[currentImg];
-
-
-  $("#confidenceRange").val(currentLabels.confidence);
-  setConfidenceLabel();
 }
 
 function getPreLabels() {
   workerLabels[currentImg] = {
     "bbox": {},
-    "confidence": 3
   };
   currentLabels = workerLabels[currentImg];
 }

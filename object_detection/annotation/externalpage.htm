@@ -1,12 +1,19 @@
 <!-- This file needs to be hosted on an external server.  -->
 <html>
 
+<link rel='stylesheet' href='https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css'>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel='stylesheet' type='text/css' href='css/style.css'>
-<link rel='stylesheet' type='text/css' href='css/rangeSlider.css'>
 <link rel='stylesheet' type='text/css' href='css/modal.css'>
 
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js'></script>
-<script src='js/turkey-lite/js/turkey-lite.js'></script>
+<script src='https://code.jquery.com/jquery-1.12.4.js'></script>
+<script src='https://code.jquery.com/ui/1.12.1/jquery-ui.js'></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<!-- https://github.com/budang/turkey-lite -->
+<script src='https://cdn.rawgit.com/budang/turkey-lite/3b71e095/js/turkey-lite-prod.js'></script>
+
 <script language='Javascript'>
 // This method Gets URL Parameters (GUP)
 function gup(name) {
@@ -32,16 +39,18 @@ function decode(strToDecode) {
 
 <input type='hidden' id='assignmentId' name='assignmentId' value=''>
 
-<div id='instructions'>
+<div id='instructions' class='accordion'>
 
-<p><b class='important'>Instructions:</b> A smart computer is trying to learn the location of a certain object and needs your help! Your job is to draw a bounding box around the object the computer is looking for.
-<ul>
-  <li>You will be shown 10 images one by one. Each image will have an object category the computer is looking for. Draw a bounding box by clicking and dragging over the image. <span class='important'>If there are multiple instances of the object, draw a box around the instance you believe is the most prominent. Otherwise, draw a box around the centermost instance.</span></li>
-  <li>Draw your bounding box such that the box completely covers the object (including obscured parts) but does not cut off any part of it.</li>
-  <li>Rate your confidence using the slider. Values range from 1 (<i>Not at all</i>) to 5 (<i>Completely</i>).</li>
-  <li>Press the <b>< Prev</b> and <b>Next ></b> buttons to navigate between images. If the image does not load, click the red button. Once you have reached the last image, press <b>Next ></b> to optionally provide feedback and submit your work.</li>
-</ul>
-</p>
+<h3>INSTRUCTIONS</h3>
+<div>
+  <p>A smart computer is trying to learn the location of a certain object and needs your help! Your job is to draw a bounding box around the object the computer is looking for.
+  <ul>
+    <li>You will be shown 10 images one by one. Each image will have an object category the computer is looking for. Draw a bounding box by clicking and dragging over the image. <span class='important'>If there are multiple instances of the object, draw a box around the instance you believe is the most prominent. Otherwise, draw a box around the centermost instance.</span></li>
+    <li>Draw your bounding box such that the box completely covers the object (including obscured parts) but does not cut off any part of it.</li>
+    <li>Press the <b>< Prev</b> and <b>Next ></b> buttons to navigate between images. If the image does not load, click the red button. Once you have reached the last image, press <b>Next ></b> to optionally provide feedback and submit your work.</li>
+  </ul>
+  </p>
+</div>
 
 </div>
 
@@ -55,26 +64,19 @@ function decode(strToDecode) {
   </td>
   <td id='right'>
     <div>
-      <b>1. Click and drag over the image to draw a bounding box around the <span id='category' class='important'></span>. Click the button below to start over. <span class='important'>Be careful not to drag your cursor outside the image.</span></b><br><br>
+      <b>Click and drag over the image to draw a bounding box around the <span id='category' class='important'></span>. Click the button below to start over. <span class='important'>Be careful not to drag your cursor outside the image.</span></b><br><br>
       <table id='inputs'>
         <tr>
-          <td><button type='button' id='resetBox'>reset</button></td>
+          <td><button type='button' id='resetBox' class='nav btn btn-secondary btn-block'>reset</button></td>
         </tr>
-      </table>
-    </div><br>
-    <div>
-      <b>2. How confident are you in your answer?</b>
-      <table>
-        <tr><td><input id='confidenceRange' type='range' name='confidence' min='1' max='5'></td></tr>
-        <tr><td><p id='confidenceLabel'></p></td></tr>
       </table>
     </div><br>
     <div>
       <table id='navButtons'>
         <tr>
-          <td><button type='button' id='prev' class='nav'>< Prev</button></td>
-          <td><button type='button' id='issue' class='nav'>Image did<br>not load</button></td>
-          <td><button type='button' id='next' class='nav'>Next ></button></td>
+          <td><button type='button' id='prev' class='nav btn btn-secondary btn-block'>&lt; Prev</button></td>
+          <td><button type='button' id='issue' class='nav btn btn-danger btn-block'>Image did<br>not load</button></td>
+          <td><button type='button' id='next' class='nav btn btn-primary btn-block'>Next &gt;</button></td>
           <td><span id='counter'></span>&nbsp;/ <span id='total'></span></td>
         </tr>
       </table>
@@ -91,10 +93,10 @@ function decode(strToDecode) {
     <tr><td>Thank you for taking the time to complete this task. If you would like to provide us feedback regarding this HIT, please do so here. To submit your answers, please click the <b>Submit</b> button. To return to the task, press the <b>Go back</b> button.</td></tr>
 
     <tr><td><textarea name='feedback'></textarea></td></tr>
-    <tr>
-      <td><input id='submitButton' type='submit' name='Submit' value='Submit'>
-      <button id="submit-cancel" type='button'>Go back</button></td>
-    </tr>
+    <tr><td>
+      <input id='submitButton' class='btn btn-success' type='submit' name='Submit' value='Submit'>
+      <button id='submit-cancel' class='btn btn-secondary' type='button'>Go back</button>
+    </td></tr>
   </table>
 </div>
 
@@ -105,7 +107,6 @@ function decode(strToDecode) {
 </form>
 
 <script src='js/pre-labels.js'></script>
-<script src='js/rangeSlider.js'></script>
 <script src='js/canvas.js'></script>
 <script src='js/main.js'></script>
 <script src='js/nav.js'></script>
@@ -115,7 +116,8 @@ $("#assignmentId").val(gup("assignmentId"));
 // Check if the worker is PREVIEWING the HIT or if they"ve ACCEPTED the HIT
 if (gup("assignmentId") == "ASSIGNMENT_ID_NOT_AVAILABLE") {
   // If we"re previewing, disable the button and give it a helpful message
-  $("#submitButton").attr("disabled", true)
+  $("#submitButton").attr("disabled", true);
+  $(".accordion").accordion({active: 0});
   $("*").click(function(evt) {
     evt.stopPropagation();
     alert("Please accept the HIT before working on it.");
