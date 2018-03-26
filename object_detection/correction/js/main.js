@@ -36,7 +36,7 @@ function prepImg() {
 
   var label = prelabels[currentImg].label;
   $("#prelabel").text(label);
-  $("#inputs").prepend(
+  $("#inputs tr:first").after(
     "<tr class='label'>" +
       "<td>" + label + "</td>" +
       "<td><input type='radio' name='" + label + "' value='yes'>&nbsp;Yes" +

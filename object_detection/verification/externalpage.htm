@@ -67,8 +67,10 @@ function decode(strToDecode) {
   </td>
   <td id='right'>
     <div>
-      <b>1. Does the bounding box surround or partially contain an object (such as a person or a car)?</b><br><br>
       <table id='verifyBox'>
+        <tr>
+          <td><b>Does the bounding box surround or partially contain an object (such as a person or a car)?</b></td>
+        </tr>
         <tr>
           <td><input type='radio' name='verifybox' value='yes'>&nbsp;Yes&nbsp;&nbsp;
           <input type='radio' name='verifybox' value='no'>&nbsp;No</td>
@@ -76,8 +78,10 @@ function decode(strToDecode) {
       </table>
     </div><br>
     <div>
-      <b>2. The predicted category is <span class='important' id='category'></span>. Is this consistent with the object in the bounding box?</b><br><br>
       <table id='verifyLabel'>
+        <tr>
+          <td><b>The predicted category is <span class='important' id='category'></span>. Is this consistent with the object in the bounding box?</b></td>
+        </tr>
         <tr>
           <td><input type='radio' name='verifylabel' value='yes'>&nbsp;Yes&nbsp;&nbsp;
           <input type='radio' name='verifylabel' value='no'>&nbsp;No</td>
