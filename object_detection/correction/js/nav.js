@@ -25,8 +25,6 @@ $(document).ready(function() {
   });
 
   $("#submitButton").click(function() {
-    $(".label, #modal, #confidenceRange").remove();
-
     $("<input />")
       .attr("type", "hidden")
       .attr("name", "labels")
@@ -63,7 +61,6 @@ $(document).ready(function() {
     if (error) {
       workerAnswers[currentImg] = "error";
       currentLabels.bbox = {};
-      currentLabels.confidence = 3;
       currentLabels.verifiedLabel = "";
     }
     else
@@ -85,9 +82,6 @@ $(document).ready(function() {
       "startY": Math.floor(startY),
       "endY": Math.floor(endY)
     }
-    currentLabels.confidence = parseInt($("#confidenceRange").val());
-
-    console.log(currentLabels.bbox)
 
     var data = {
       "bbox": {
@@ -96,7 +90,6 @@ $(document).ready(function() {
         "width": Math.abs(currentLabels.bbox.endX - currentLabels.bbox.startX),
         "height": Math.abs(currentLabels.bbox.endY - currentLabels.bbox.startY)
       },
-      "confidence": currentLabels.confidence,
       "label": currentLabels.verifiedLabel ? currentLabels.verifiedLabel : currentLabels.prelabel
     };
     workerAnswers[currentImg] = data;

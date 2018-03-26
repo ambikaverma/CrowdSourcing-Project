@@ -20,14 +20,19 @@ var workerAnswers = {};
   }
 })("imgs");
 
+$("document").ready(function() {
+  $(".accordion").accordion({
+    collapsible: true,
+    active: 0
+  });
+});
+
 function prepImg() {
   drawn = 0;
 
   currentImg = imgs[current];
 
   $(".label").remove()
-  $("#confidenceRange").val(3)
-  setConfidenceLabel();
 
   var label = prelabels[currentImg].label;
   $("#prelabel").text(label);
@@ -66,15 +71,11 @@ function getWorkerLabels() {
     $("input[name='" + prelabel + "'][value='no'").prop("checked", true);
     addObj(verifiedLabel);
   }
-
-  $("#confidenceRange").val(currentLabels.confidence);
-  setConfidenceLabel();
 }
 
 function getPreLabels() {
   workerLabels[currentImg] = {
     "bbox": {},
-    "confidence": 3,
     "corrected": false,
     "prelabel": prelabels[currentImg].label,
     "verifiedLabel": "",
