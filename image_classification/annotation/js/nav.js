@@ -75,7 +75,7 @@ $(document).ready(function() {
       "positives": currentLabels.positives.slice(),
     }
     $.each(data.positives, function(i, val) {
-      data.positives[i] = mappings[val];
+      data.positives[i] = val;
     });
     workerAnswers[currentImg] = data;
   } 

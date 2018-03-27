@@ -17,7 +17,7 @@ $(document).ready(function() {
   $("#modal-ok").click(function() {
     var checked = $('.categories:checkbox:checked');
     $.each(checked, function(i, val) {
-      var category = mappings[($(val).val())];
+      var category = $(val).val();
       if (currentLabels.addedCategories.indexOf(category) == -1) {
         currentLabels.addedCategories.push(category);
         addObj(category);
