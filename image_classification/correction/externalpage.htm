@@ -46,7 +46,7 @@ function decode(strToDecode) {
   <p>A smart computer is trying to learn how to identify objects in an image and needs your help! It has predicted some object categories based on previously provided information, and your job is to verify these predictions and provide correct missing labels.
   <ul>
     <li>You will be shown 10 images one by one. Most images will have predicted categories from the computer, though some images may not have any predictions. Verify if these predictions are correct by choosing <i>Yes</i> or <i>No</i>. The computer's confidence scores are also listed next to their corresponding labels and range from 0 (least confident) to 1 (most confident).</li>
-    <li>The following categories can be present in an image: <span class='important'>airplane, bird, bus, car, cat, couch, dog, horse, person, train</span>. Click the <b>+ add another object</b> button to select any combination of these categories to add. It is also possible for an image to have none of these categories; in this case, select <span class='important'>NONE_OF_THE_ABOVE</span> in the list.</li>
+    <li>The following categories can be present in an image: <span class='important'>airplane, bicycle, bird, boat, bottle, bus, car, cat, chair, cow, dog, horse, motorcycle, person, potted plant, sheep, sofa/couch, table, train, TV/monitor</span>. Click the <b>+ add another object</b> button to select any combination of these categories to add. It is also possible for an image to have none of these categories; in this case, select <span class='important'>NONE OF THE ABOVE</span> in the list.</li>
     <li>Hover your cursor over the image and use your mousewheel to zoom in and out on a particular region of the image. Click the image once to reset it.</li>
     <li>Press the <b>< Prev</b> and <b>Next ></b> buttons to navigate between images. If the image does not load, click the red button. Once you have reached the last image, press <b>Next ></b> to optionally provide feedback and submit your work.</li>
   </ul>
@@ -91,36 +91,63 @@ function decode(strToDecode) {
 <div id='modal' class='modal'>
 
 <div class="modal-content">
-  <h3>Select categories to add:</h3>
+  <h3>Select categories to add:</h3><br>
   <table>
     <tr>
-      <td><input type='checkbox' class='categories' name='categories' value='5'>&nbsp;<b>airplane</b></td>
-      <td><input type='checkbox' class='categories' name='categories' value='63'>&nbsp;<b>couch</b></td>
+      <td><input type='checkbox' class='categories' name='categories' value='airplane'>&nbsp;<b>airplane</b></td>
+      <td><input type='checkbox' class='categories' name='categories' value='bus'>&nbsp;<b>bus</b></td>
+      <td><input type='checkbox' class='categories' name='categories' value='dog'>&nbsp;<b>dog</b></td>
+      <td><input type='checkbox' class='categories' name='categories' value='sheep'>&nbsp;<b>sheep</b></td>
     </tr>
     <tr>
-      <td><input type='checkbox' class='categories' name='categories' value='16'>&nbsp;<b>bird</b></td>
-      <td><input type='checkbox' class='categories' name='categories' value='18'>&nbsp;<b>dog</b></td>
+      <td><input type='checkbox' class='categories' name='categories' value='bicycle'>&nbsp;<b>bicycle</b></td>
+      <td><input type='checkbox' class='categories' name='categories' value='car'>&nbsp;<b>car</b></td>
+      <td><input type='checkbox' class='categories' name='categories' value='horse'>&nbsp;<b>horse</b></td>
+      <td><input type='checkbox' class='categories' name='categories' value='sofa/couch'>&nbsp;<b>sofa/couch</b></td>
     </tr>
     <tr>
-      <td><input type='checkbox' class='categories' name='categories' value='6'>&nbsp;<b>bus</b></td>
-      <td><input type='checkbox' class='categories' name='categories' value='19'>&nbsp;<b>horse</b></td>
+      <td><input type='checkbox' class='categories' name='categories' value='bird'>&nbsp;<b>bird</b></td>
+      <td><input type='checkbox' class='categories' name='categories' value='cat'>&nbsp;<b>cat</b></td>
+      <td><input type='checkbox' class='categories' name='categories' value='motorcycle'>&nbsp;<b>motorcycle</b></td>
+      <td><input type='checkbox' class='categories' name='categories' value='table'>&nbsp;<b>table</b></td>
     </tr>
     <tr>
-      <td><input type='checkbox' class='categories' name='categories' value='3'>&nbsp;<b>car</b></td>
-      <td><input type='checkbox' class='categories' name='categories' value='1'>&nbsp;<b>person</b></td>
+      <td><input type='checkbox' class='categories' name='categories' value='boat'>&nbsp;<b>boat</b></td>
+      <td><input type='checkbox' class='categories' name='categories' value='chair'>&nbsp;<b>chair</b></td>
+      <td><input type='checkbox' class='categories' name='categories' value='person'>&nbsp;<b>person</b></td>
+      <td><input type='checkbox' class='categories' name='categories' value='train'>&nbsp;<b>train</b></td>
     </tr>
     <tr>
-      <td><input type='checkbox' class='categories' name='categories' value='17'>&nbsp;<b>cat</b></td>
-      <td><input type='checkbox' class='categories' name='categories' value='7'>&nbsp;<b>train</b></td>
+      <td><input type='checkbox' class='categories' name='categories' value='bottle'>&nbsp;<b>bottle</b></td>
+      <td><input type='checkbox' class='categories' name='categories' value='cow'>&nbsp;<b>cow</b></td>
+      <td><input type='checkbox' class='categories' name='categories' value='potted plant'>&nbsp;<b>potted plant</b></td>
+      <td><input type='checkbox' class='categories' name='categories' value='TV/monitor'>&nbsp;<b>TV/monitor</b></td>
     </tr>
     <tr>
-      <td><input type='checkbox' class='categories' name='categories' value='-1'>&nbsp;<span class='important'><b>NONE_OF_THE_ABOVE</b></span></td>
+      <td><input type='checkbox' class='categories' name='categories' value='NONE_OF_THE_ABOVE'>&nbsp;<span class='important'><b>NONE OF THE ABOVE</b></span></td>
     </tr>
     <tr>
-      <td></td>
+      <td></td><td></td><td></td>
       <td><button id='modal-ok' type='button' class='btn btn-success'>OK</button>
       <button id='modal-cancel' type='button' class='btn btn-secondary'>Cancel</button></td>
     </tr>
+  </table>
+</div>
+
+</div>
+
+<div id='feedback' class='modal'>
+
+<div class="modal-content">
+  <h3>Feedback</h3>
+  <table>
+    <tr><td>Thank you for taking the time to complete this task. If you would like to provide us feedback regarding this HIT, please do so here. To submit your answers, please click the <b>Submit</b> button. To return to the task, press the <b>Go back</b> button.</td></tr>
+
+    <tr><td><textarea name='feedback'></textarea></td></tr>
+    <tr><td>
+      <input id='submitButton' class='btn btn-success' type='submit' name='Submit' value='Submit'>
+      <button id='submit-cancel' class='btn btn-secondary' type='button'>Go back</button>
+    </td></tr>
   </table>
 </div>
 
