@@ -32,7 +32,9 @@ function prepImg() {
 
   currentImg = imgs[current];
 
-  $(".label").remove()
+  $(".label").remove();
+  notDrawn = true;
+  rect = {};
 
   var category = groundtruth[currentImg][0];
   $("#category").text(mappings[category]);
@@ -43,10 +45,10 @@ function prepImg() {
 
   if (workerLabels[currentImg]) {
     getWorkerLabels();
-    loadImage(true);
+    load(true);
   } else {
     getPreLabels();
-    loadImage(false);
+    load(false);
   }
 }
 

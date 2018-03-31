@@ -1,69 +1,49 @@
+/*****************************************************************************/
+
 var canvas = $("canvas")[0];
-var canvasImg;
+var ctx = canvas.getContext('2d'),
+    rect = {},
+    drag = false,
+    mouseX,
+    mouseY,
+    closeEnough = 5,
+    dragTL = dragBL = dragTR = dragBR = false;
+var notDrawn = true;
+var imageObj = new Image();
+var colPadding = 0;
+var imageName = decode(gup('img')),
+    question = decodeURI(gup('ques'));
 
-var drawn = 0;
+function redraw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  loadImage(canvas);
 
-/*****************************************************************************
- * http://stackoverflow.com/questions/17226133/drawing-a-rectangle-on-canvas *
- ****************************************************************************/
-var context, startX, endX, startY, endY;
-var mouseIsDown = 0;
-
-function init(imgObj) {
-  canvasImg = imgObj;
-
-  $("canvas").mousedown(mouseDown);
-  $("canvas").mousemove(mouseXY);
-  $("canvas").mouseup(mouseUp);
+  notDrawn = true;
+  rect = {};
 }
 
-function mouseUp(eve) {
-  if (mouseIsDown != 0) {
-    mouseIsDown = 0;
-    var pos = getMousePos(canvas, eve);
-    endX = pos.x;
-    endY = pos.y;
-    drawSquare();
-    drawn = 1;
-  }
+function loadCanvas(canv) {
+  canvas.width = imageObj.width;
+  canvas.height = imageObj.height;
+  loadImage(canv);
 }
 
-function mouseDown(eve) {
-  if (drawn)
-    return;
+function init() {
+  canvas.addEventListener('mousedown', mouseDown, false);
+  canvas.addEventListener('mouseup', mouseUp, false);
+  canvas.addEventListener('mousemove', mouseMove, false);
+  
+  $("#resetBox").click(function() {
+    redraw();
+  });
 
-  mouseIsDown = 1;
-  var pos = getMousePos(canvas, eve);
-  startX = endX = pos.x;
-  startY = endY = pos.y;
-  drawSquare();
-}
+  imageObj.src = currentImgSrc;
 
-function mouseXY(eve) {
-  if (mouseIsDown != 0) {
-    var pos = getMousePos(canvas, eve);
-    endX = pos.x;
-    endY = pos.y;
-
-    drawSquare();
-  }
-}
-
-function drawSquare() {
-  var w = endX - startX;
-  var h = endY - startY;
-  var offsetX = (w < 0) ? w : 0;
-  var offsetY = (h < 0) ? h : 0;
-  var width = Math.abs(w);
-  var height = Math.abs(h);
-
-  context.drawImage(canvasImg, 0, 0, canvas.width, canvas.height);
-
-  context.beginPath();
-  context.rect(startX + offsetX, startY + offsetY, width, height);
-  context.lineWidth = 2.5;
-  context.strokeStyle = "lime";
-  context.stroke();
+  loadCanvas(canvas);
+  imageObj.onload = function() {
+    loadCanvas(canvas);
+    draw(canvas);
+  };
 }
 
 function getMousePos(canvas, evt) {
@@ -73,46 +53,118 @@ function getMousePos(canvas, evt) {
     y: evt.clientY - rect.top
   };
 }
+
+function mouseDown(e) {
+  mouseX = getMousePos(canvas,e).x
+  mouseY = getMousePos(canvas,e).y
+  notDrawn = false;
+
+  // if there isn't a rect yet
+  if (rect.w === undefined) {
+      rect.startX = mouseX;
+      rect.startY = mouseY;
+      dragBR = true;
+  }
+  // top left
+  else if (checkCloseEnough(mouseX, rect.startX) && checkCloseEnough(mouseY, rect.startY)) {
+    dragTL = true;
+  }
+  // top right
+  else if (checkCloseEnough(mouseX, rect.startX + rect.w) && checkCloseEnough(mouseY, rect.startY)) {
+    dragTR = true;
+  }
+  // bottom left
+  else if (checkCloseEnough(mouseX, rect.startX) && checkCloseEnough(mouseY, rect.startY + rect.h)) {
+    dragBL = true;
+  }
+  // bottom right
+  else if (checkCloseEnough(mouseX, rect.startX + rect.w) && checkCloseEnough(mouseY, rect.startY + rect.h)) {
+    dragBR = true;
+  }
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  loadImage(canvas);
+  draw(canvas);
+}
+
+function checkCloseEnough(p1, p2) {
+  return Math.abs(p1 - p2) < closeEnough;
+}
+
+function mouseUp() {
+  dragTL = dragTR = dragBL = dragBR = false;
+}
+
+function mouseMove(e) {
+  if (notDrawn)
+    return;
+
+  mouseX = getMousePos(canvas,e).x
+  mouseY = getMousePos(canvas,e).y
+
+  if (dragTL) {
+    rect.w += rect.startX - mouseX;
+    rect.h += rect.startY - mouseY;
+    rect.startX = mouseX;
+    rect.startY = mouseY;
+  } else if (dragTR) {
+    rect.w = Math.abs(rect.startX - mouseX);
+    rect.h += rect.startY - mouseY;
+    rect.startY = mouseY;
+  } else if (dragBL) {
+    rect.w += rect.startX - mouseX;
+    rect.h = Math.abs(rect.startY - mouseY);
+    rect.startX = mouseX;
+  } else if (dragBR) {
+    rect.w = Math.abs(rect.startX - mouseX);
+    rect.h = Math.abs(rect.startY - mouseY);
+  }
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  loadImage(canvas);
+  draw(canvas);
+}
+
+function draw(canv) {
+  var ctx1 = canv.getContext('2d');
+  ctx1.lineWidth = 3;
+  ctx1.strokeStyle = "lime";
+  ctx1.strokeRect(rect.startX, rect.startY, rect.w, rect.h);
+  drawHandles(ctx1);
+}
+
+function drawCircle(x, y, radius, ctx1) {
+  ctx1.fillStyle = "#111111";
+  ctx1.strokeStyle = "#ffffff"
+  ctx1.beginPath();
+  ctx1.arc(x, y, radius, 0, 2 * Math.PI);
+  ctx1.fill();
+  ctx1.stroke();
+}
+
+function drawHandles(ctx1) {
+  drawCircle(rect.startX, rect.startY, closeEnough, ctx1);
+  drawCircle(rect.startX + rect.w, rect.startY, closeEnough, ctx1);
+  drawCircle(rect.startX + rect.w, rect.startY + rect.h, closeEnough, ctx1);
+  drawCircle(rect.startX, rect.startY + rect.h, closeEnough, ctx1);
+}
+
+function loadImage(canv) {
+  var ctx1 = canv.getContext('2d');
+  ctx1.drawImage(imageObj, 0, 0, imageObj.width, imageObj.height,
+                 0, 0, canv.width, canv.height);
+}
+
 /*****************************************************************************/
 
-function loadImage(labels) {
-  context = canvas.getContext("2d");
-  var imgObj = new Image();
-  imgObj.onload = function() {
-    var width = this.width;
-    var height = this.height;
+function load(labels) {
+  if (currentLabels.bbox.x) {
+    rect.startX = currentLabels.bbox.x;
+    rect.startY = currentLabels.bbox.y;
+    rect.w = currentLabels.bbox.w;
+    rect.h = currentLabels.bbox.h;
 
-    canvas.width = width;
-    canvas.height = height;
-
-    context.drawImage(imgObj, 0, 0, width, height);
-
-    if (labels) {
-      startX = currentLabels.bbox.startX;
-      startY = currentLabels.bbox.startY;
-      endX = currentLabels.bbox.endX;
-      endY = currentLabels.bbox.endY;
-
-      if (startX) {
-        drawSquare();
-        drawn = 1;
-      }
-    }
+    notDrawn = false;
   }
-  imgObj.src = currentImgSrc;
-
-  init(imgObj);
+  init();
 }
-
-function resetPoints() {
-  startX = 0;
-  endX = 0;
-  startY = 0;
-  endY = 0;
-}
-
-$("#resetBox").click(function() {
-  context.drawImage(canvasImg, 0, 0, canvas.width, canvas.height);
-  drawn = 0;
-  resetPoints();
-});
