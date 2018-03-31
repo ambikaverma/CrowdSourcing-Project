@@ -16,8 +16,6 @@ $(document).ready(function() {
 
   $("#modal-ok").click(function() {
     var checked = $($('.categories:checked')[0]).val();
-    checked = mappings[checked];
-
     if (checked != prelabels[currentImg].label && !currentLabels.corrected) {
       addObj(checked);
       currentLabels.label = checked;

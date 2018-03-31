@@ -44,11 +44,8 @@ $(document).ready(function() {
     } else if (!currentLabels.verifiedLabel && $(prelabel).val() == "no") {
       alert("Please add the correct label.");
       return false;
-    } else if (!drawn) {
+    } else if (notDrawn) {
       alert("Please make sure you've drawn a bounding box.");
-      return false;
-    } else if (!(endX - startX) || !(endY - startY)) {
-      alert("Please click 'reset' and redraw your bounding box.")
       return false;
     }
     return true;
@@ -77,19 +74,14 @@ $(document).ready(function() {
 
   function saveLabels() {
     currentLabels.bbox = {
-      "startX": Math.floor(startX),
-      "endX": Math.floor(endX),
-      "startY": Math.floor(startY),
-      "endY": Math.floor(endY)
-    }
+      "x": Math.floor(rect.startX),
+      "y": Math.floor(rect.startY),
+      "w": Math.floor(rect.w),
+      "h": Math.floor(rect.h)
+    };
 
     var data = {
-      "bbox": {
-        "x": Math.min(currentLabels.bbox.startX, currentLabels.bbox.endX),
-        "y": Math.min(currentLabels.bbox.startY, currentLabels.bbox.endY),
-        "width": Math.abs(currentLabels.bbox.endX - currentLabels.bbox.startX),
-        "height": Math.abs(currentLabels.bbox.endY - currentLabels.bbox.startY)
-      },
+      "bbox": $.extend({}, currentLabels.bbox),
       "label": currentLabels.verifiedLabel ? currentLabels.verifiedLabel : currentLabels.prelabel
     };
     workerAnswers[currentImg] = data;

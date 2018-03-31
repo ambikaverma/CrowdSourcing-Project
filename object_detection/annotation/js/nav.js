@@ -68,7 +68,7 @@ $(document).ready(function() {
       "h": Math.floor(rect.h)
     };
 
-    var data = {"bbox": $.extend(true, {}, currentLabels.bbox) };
+    var data = $.extend({}, currentLabels);
     workerAnswers[currentImg] = data;
   } 
 });

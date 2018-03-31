@@ -11,8 +11,6 @@ var ctx = canvas.getContext('2d'),
 var notDrawn = true;
 var imageObj = new Image();
 var colPadding = 0;
-var imageName = decode(gup('img')),
-    question = decodeURI(gup('ques'));
 
 function redraw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -150,14 +148,14 @@ function drawHandles(ctx1) {
 }
 
 function loadImage(canv) {
-  var ctx1 = canv.getContext('2d');
+  var ctx1 = canvas.getContext('2d');
   ctx1.drawImage(imageObj, 0, 0, imageObj.width, imageObj.height,
                  0, 0, canv.width, canv.height);
 }
 
 /*****************************************************************************/
 
-function load(labels) {
+function load() {
   if (currentLabels.bbox.x) {
     rect.startX = currentLabels.bbox.x;
     rect.startY = currentLabels.bbox.y;

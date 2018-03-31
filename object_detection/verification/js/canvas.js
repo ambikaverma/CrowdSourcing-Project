@@ -37,6 +37,6 @@ function drawPreBox() {
   context.beginPath();
   context.rect(bbox.xmin + offsetX, bbox.ymin + offsetY, width, height);
   context.lineWidth = 2.5;
-  context.strokeStyle = "orange";
+  context.strokeStyle = "lime";
   context.stroke();
 }

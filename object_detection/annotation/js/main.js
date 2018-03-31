@@ -28,8 +28,6 @@ $("document").ready(function() {
 });
 
 function prepImg() {
-  drawn = 0;
-
   currentImg = imgs[current];
 
   $(".label").remove();
@@ -43,13 +41,11 @@ function prepImg() {
 
   $("#counter").text(current + 1);
 
-  if (workerLabels[currentImg]) {
+  if (workerLabels[currentImg])
     getWorkerLabels();
-    load(true);
-  } else {
+  else
     getPreLabels();
-    load(false);
-  }
+  load();
 }
 
 function getWorkerLabels() {

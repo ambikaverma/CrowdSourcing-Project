@@ -28,11 +28,11 @@ $("document").ready(function() {
 });
 
 function prepImg() {
-  drawn = 0;
-
   currentImg = imgs[current];
 
-  $(".label").remove()
+  $(".label").remove();
+  notDrawn = true;
+  rect = {};
 
   var label = prelabels[currentImg].label;
   $("#prelabel").text(label);
@@ -49,13 +49,11 @@ function prepImg() {
 
   $("#counter").text(current + 1);
 
-  if (workerLabels[currentImg]) {
+  if (workerLabels[currentImg])
     getWorkerLabels();
-    loadImage(true);
-  } else {
+  else
     getPreLabels();
-    loadImage(false);
-  }
+  load();
 }
 
 function getWorkerLabels() {
@@ -64,7 +62,7 @@ function getWorkerLabels() {
   var prelabel = currentLabels.prelabel;
   var verifiedLabel = currentLabels.verifiedLabel;
   if (!verifiedLabel) {
-    if (currentLabels.bbox["startX"])
+    if (currentLabels.bbox["x"])
       $("input[name='" + prelabel + "'][value='yes'").prop("checked", true);
   }
   else {
