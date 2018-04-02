@@ -99,45 +99,49 @@ function decode(strToDecode) {
 
 <div id='modal' class='modal'>
 
-
 <div class="modal-content">
   <h3>Select categories to add:</h3><br>
   <table>
+    <td class='modal-td'><img></td>
+    <td class='modal-td'>
+      <table>
+        <tr>
+          <td><input type='radio' class='categories' name='categories' value='airplane'>&nbsp;<b>airplane</b></td>
+          <td><input type='radio' class='categories' name='categories' value='bus'>&nbsp;<b>bus</b></td>
+          <td><input type='radio' class='categories' name='categories' value='dog'>&nbsp;<b>dog</b></td>
+          <td><input type='radio' class='categories' name='categories' value='sheep'>&nbsp;<b>sheep</b></td>
+        </tr>
+        <tr>
+          <td><input type='radio' class='categories' name='categories' value='bicycle'>&nbsp;<b>bicycle</b></td>
+          <td><input type='radio' class='categories' name='categories' value='car'>&nbsp;<b>car</b></td>
+          <td><input type='radio' class='categories' name='categories' value='horse'>&nbsp;<b>horse</b></td>
+          <td><input type='radio' class='categories' name='categories' value='sofa/couch'>&nbsp;<b>sofa/couch</b></td>
+        </tr>
+        <tr>
+          <td><input type='radio' class='categories' name='categories' value='bird'>&nbsp;<b>bird</b></td>
+          <td><input type='radio' class='categories' name='categories' value='cat'>&nbsp;<b>cat</b></td>
+          <td><input type='radio' class='categories' name='categories' value='motorcycle'>&nbsp;<b>motorcycle</b></td>
+          <td><input type='radio' class='categories' name='categories' value='table'>&nbsp;<b>table</b></td>
+        </tr>
+        <tr>
+          <td><input type='radio' class='categories' name='categories' value='boat'>&nbsp;<b>boat</b></td>
+          <td><input type='radio' class='categories' name='categories' value='chair'>&nbsp;<b>chair</b></td>
+          <td><input type='radio' class='categories' name='categories' value='person'>&nbsp;<b>person</b></td>
+          <td><input type='radio' class='categories' name='categories' value='train'>&nbsp;<b>train</b></td>
+        </tr>
+        <tr>
+          <td><input type='radio' class='categories' name='categories' value='bottle'>&nbsp;<b>bottle</b></td>
+          <td><input type='radio' class='categories' name='categories' value='cow'>&nbsp;<b>cow</b></td>
+          <td><input type='radio' class='categories' name='categories' value='potted plant'>&nbsp;<b>potted plant</b></td>
+          <td><input type='radio' class='categories' name='categories' value='TV/monitor'>&nbsp;<b>TV/monitor</b></td>
+        </tr>
+        <tr>
+          <td><input type='radio' class='categories' name='categories' value='NONE_OF_THE_ABOVE'>&nbsp;<span class='important'><b>NONE OF THE ABOVE</b></span></td>
+        </tr>
+      </table>
+    </td>
     <tr>
-      <td><input type='radio' class='categories' name='categories' value='airplane'>&nbsp;<b>airplane</b></td>
-      <td><input type='radio' class='categories' name='categories' value='bus'>&nbsp;<b>bus</b></td>
-      <td><input type='radio' class='categories' name='categories' value='dog'>&nbsp;<b>dog</b></td>
-      <td><input type='radio' class='categories' name='categories' value='sheep'>&nbsp;<b>sheep</b></td>
-    </tr>
-    <tr>
-      <td><input type='radio' class='categories' name='categories' value='bicycle'>&nbsp;<b>bicycle</b></td>
-      <td><input type='radio' class='categories' name='categories' value='car'>&nbsp;<b>car</b></td>
-      <td><input type='radio' class='categories' name='categories' value='horse'>&nbsp;<b>horse</b></td>
-      <td><input type='radio' class='categories' name='categories' value='sofa/couch'>&nbsp;<b>sofa/couch</b></td>
-    </tr>
-    <tr>
-      <td><input type='radio' class='categories' name='categories' value='bird'>&nbsp;<b>bird</b></td>
-      <td><input type='radio' class='categories' name='categories' value='cat'>&nbsp;<b>cat</b></td>
-      <td><input type='radio' class='categories' name='categories' value='motorcycle'>&nbsp;<b>motorcycle</b></td>
-      <td><input type='radio' class='categories' name='categories' value='table'>&nbsp;<b>table</b></td>
-    </tr>
-    <tr>
-      <td><input type='radio' class='categories' name='categories' value='boat'>&nbsp;<b>boat</b></td>
-      <td><input type='radio' class='categories' name='categories' value='chair'>&nbsp;<b>chair</b></td>
-      <td><input type='radio' class='categories' name='categories' value='person'>&nbsp;<b>person</b></td>
-      <td><input type='radio' class='categories' name='categories' value='train'>&nbsp;<b>train</b></td>
-    </tr>
-    <tr>
-      <td><input type='radio' class='categories' name='categories' value='bottle'>&nbsp;<b>bottle</b></td>
-      <td><input type='radio' class='categories' name='categories' value='cow'>&nbsp;<b>cow</b></td>
-      <td><input type='radio' class='categories' name='categories' value='potted plant'>&nbsp;<b>potted plant</b></td>
-      <td><input type='radio' class='categories' name='categories' value='TV/monitor'>&nbsp;<b>TV/monitor</b></td>
-    </tr>
-    <tr>
-      <td><input type='radio' class='categories' name='categories' value='NONE_OF_THE_ABOVE'>&nbsp;<span class='important'><b>NONE OF THE ABOVE</b></span></td>
-    </tr>
-    <tr>
-      <td></td><td></td><td></td>
+      <td></td>
       <td><button id='modal-ok' type='button' class='btn btn-success'>OK</button>
       <button id='modal-cancel' type='button' class='btn btn-secondary'>Cancel</button></td>
     </tr>

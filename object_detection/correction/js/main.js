@@ -46,6 +46,7 @@ function prepImg() {
   );
 
   currentImgSrc = "../../images/" + currentImg + ".jpg";
+  $("img").first().attr("src", currentImgSrc);
 
   $("#counter").text(current + 1);
 
