@@ -55,6 +55,8 @@ function prepImg() {
   else
     getPreLabels();
   load();
+
+  setAddObjButton();
 }
 
 function getWorkerLabels() {
@@ -80,4 +82,21 @@ function getPreLabels() {
     "verifiedLabel": "",
   };
   currentLabels = workerLabels[currentImg];
+}
+
+function setAddObjButton() {
+  if (!workerAnswers[currentImg])
+    $("#addLink").prop("disabled", true);
+
+  $(".label > td > input[type='radio']").change(function() {
+    if ($(this).val() == 'yes') {
+      $("#addLink").prop("disabled", true);
+      if ($(".label").length > 1)
+        $(".label:last").remove();
+
+      currentLabels.corrected = false;
+      currentLabels.verifiedLabel = "";
+    } else
+      $("#addLink").prop("disabled", false);
+  });
 }

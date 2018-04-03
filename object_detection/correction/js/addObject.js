@@ -38,6 +38,7 @@ function addObj(category) {
     "</tr>"
   );
   enableDelete();
+  $("#addLink").prop("disabled", true);
 }
 
 function enableDelete() {
@@ -45,5 +46,6 @@ function enableDelete() {
     $($(this).parents()[1]).remove();
     currentLabels.corrected = false;
     currentLabels.verifiedLabel = "";
+    $("#addLink").prop("disabled", false);
   });
 }
