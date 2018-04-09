@@ -25,6 +25,8 @@ $(document).ready(function() {
   });
 
   $("#submitButton").click(function() {
+    $(".label").remove();
+
     $("<input />")
       .attr("type", "hidden")
       .attr("name", "labels")
@@ -93,5 +95,5 @@ $(document).ready(function() {
       "positives": currentLabels.positives.slice(),
     }
     workerAnswers[currentImg] = data;
-  } 
+  }
 });

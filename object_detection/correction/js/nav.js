@@ -25,6 +25,8 @@ $(document).ready(function() {
   });
 
   $("#submitButton").click(function() {
+    $(".label, input[type=radio]").remove();
+
     $("<input />")
       .attr("type", "hidden")
       .attr("name", "labels")
@@ -85,5 +87,5 @@ $(document).ready(function() {
       "label": currentLabels.verifiedLabel ? currentLabels.verifiedLabel : currentLabels.prelabel
     };
     workerAnswers[currentImg] = data;
-  } 
+  }
 });

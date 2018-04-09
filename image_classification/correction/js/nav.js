@@ -25,6 +25,8 @@ $(document).ready(function() {
   });
 
   $("#submitButton").click(function() {
+    $(".label, input[type=checkbox]").remove();
+
     $("<input />")
       .attr("type", "hidden")
       .attr("name", "labels")
