@@ -40,7 +40,7 @@ $(document).ready(function() {
 
     var answersOk = true;
     $.each(currentLabels.addedCategories, function(i, val) {
-      if (!$("input:radio[name=" + val + "]:checked").val()) {
+      if (!$("input:radio[name='" + val + "']:checked").val()) {
         alert("Please make sure you've selected YES or NO for each category.");
         answersOk = false;
       }
@@ -88,5 +88,5 @@ $(document).ready(function() {
       "positives": currentLabels.positives.slice(),
     }
     workerAnswers[currentImg] = data;
-  } 
+  }
 });
