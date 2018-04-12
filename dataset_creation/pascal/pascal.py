@@ -9,8 +9,8 @@ categories = ['aeroplane',   'bicycle', 'bird',  'boat',      'bottle',   \
               'diningtable', 'dog',     'horse', 'motorbike', 'person',   \
               'pottedplant', 'sheep',   'sofa',  'train',     'tvmonitor' ]
 
-# randomly sample 25 images for each category
-num_samples = 25
+# randomly sample 10 images for each category
+num_samples = 10
 images = []
 for category in categories:
     with open(voc_path + category + '_train.txt') as handle:
@@ -22,10 +22,10 @@ for category in categories:
         if entry[-2:] == ' 1':
             category_images.append(entry.split(' ')[0] + '.jpg')
 
-    new_images = [category_images[i] for i in random.sample(range(len(category_images)), 25)]
+    new_images = [category_images[i] for i in random.sample(range(len(category_images)), num_samples)]
 
     while len(set(images).intersection(set(new_images))):
-        new_images = [category_images[i] for i in random.sample(range(len(category_images)), 25)]
+        new_images = [category_images[i] for i in random.sample(range(len(category_images)), num_samples)]
 
     images += new_images
 

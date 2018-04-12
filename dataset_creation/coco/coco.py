@@ -12,13 +12,13 @@ categories = ['airplane', 'bicycle', 'bird',       'boat',   'bottle',       \
               'dog',      'horse',   'motorcycle', 'person', 'potted plant', \
               'sheep',    'sofa',    'table',      'train',  'TV'            ]
 
-# randomly sample 25 images for each category
-num_samples = 25
+# randomly sample 10 images for each category
+num_samples = 10
 images = []
 for cat in categories:
     catIds = coco.getCatIds(catNms=[cat])
     imgIds = coco.getImgIds(catIds=catIds)
-    imgIds = [imgIds[i] for i in random.sample(range(len(imgIds)), 25)]
+    imgIds = [imgIds[i] for i in random.sample(range(len(imgIds)), num_samples)]
     images += imgIds
 
 # normalize image names
