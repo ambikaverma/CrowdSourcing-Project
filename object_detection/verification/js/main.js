@@ -30,8 +30,7 @@ $("document").ready(function() {
 function prepImg() {
   currentImg = imgs[current];
 
-  $("input[name='verifybox']").prop("checked", false);
-  $("input[name='verifylabel']").prop("checked", false);
+  $("input[name='verify']").prop("checked", false);
 
   var category = prelabels[currentImg].label;
   $("#category").text(category);
@@ -51,15 +50,10 @@ function prepImg() {
 
 function getWorkerLabels() {
   currentLabels = workerLabels[currentImg];
-
-  $("input[name='verifybox'][value='" + currentLabels.bbox + "']").prop("checked", true);
-  $("input[name='verifylabel'][value='" + currentLabels.label + "']").prop("checked", true);
+  $("input[name='verify'][value='" + currentLabels + "']").prop("checked", true);
 }
 
 function getPreLabels() {  
-  workerLabels[currentImg] = {
-    "bbox": "",
-    "label": "",
-  };
+  workerLabels[currentImg] = "";
   currentLabels = workerLabels[currentImg];
 }

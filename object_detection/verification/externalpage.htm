@@ -45,11 +45,7 @@ function decode(strToDecode) {
 <div>
   <p>A smart computer is trying to detect what objects are in an image and needs your help! Your job is to verify if its bounding box and corresponding category label are accurate.
   <ul>
-    <li>You will be shown 10 images one by one. Each image will have a detected object consisting of a bounding box (green box) and category label (red text). Answer the following questions:</li>
-    <ul>
-      <li>Does the bounding box cover or partially cover an object? Select <i>Yes</i> or <i>No</i>.</li>
-      <li>The predicted category for the object in the bounding box is "___". Does the object in the bounding box match the prediction? Select <i>Yes</i> or <i>No</i>. If you selected <i>No</i> for the previous question, you should select <i>No</i> for this question as well.</li>
-    </ul>
+    <li>You will be shown 10 images one by one. Each image will have a detected object consisting of a bounding box (green box) and category label (red text). Verify that the bounding box covers at least half of an instance of the predicted category (e.g., at least 50% of its pixels).
     <li>Press the <b>< Prev</b> and <b>Next ></b> buttons to navigate between images. If the image does not load, click the red button. Once you have reached the last image, press <b>Next ></b> to optionally provide feedback and submit your work.</li>
   </ul>
   </p>
@@ -67,24 +63,13 @@ function decode(strToDecode) {
   </td>
   <td id='right'>
     <div>
-      <table id='verifyBox'>
+      <table id='verify'>
         <tr>
-          <td><b>Does the bounding box cover or partially cover an object?</b></td>
+          <td><b>Does the green rectangle on the image cover at least half of a <span class='important' id='category'></span> (e.g., at least 50% of its pixels)?</b></td>
         </tr>
         <tr>
-          <td><input type='radio' name='verifybox' value='yes'>&nbsp;Yes&nbsp;&nbsp;
-          <input type='radio' name='verifybox' value='no'>&nbsp;No</td>
-        </tr>
-      </table>
-    </div><br>
-    <div>
-      <table id='verifyLabel'>
-        <tr>
-          <td><b>The predicted category for the object in the bounding box is <span class='important' id='category'></span>. Does the object in the bounding box match the prediction?</b></td>
-        </tr>
-        <tr>
-          <td><input type='radio' name='verifylabel' value='yes'>&nbsp;Yes&nbsp;&nbsp;
-          <input type='radio' name='verifylabel' value='no'>&nbsp;No</td>
+          <td><input type='radio' name='verify' value='yes'>&nbsp;Yes&nbsp;&nbsp;
+          <input type='radio' name='verify' value='no'>&nbsp;No</td>
         </tr>
       </table>
     </div><br>

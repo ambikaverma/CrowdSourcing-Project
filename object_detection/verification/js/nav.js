@@ -35,16 +35,13 @@ $(document).ready(function() {
   });
 
   function checkAnswers() {
-    var verifybox = $($("input[name='verifybox']:checked")[0]).val();
-    var verifylabel = $($("input[name='verifylabel']:checked")[0]).val()
+    var verified = $($("input[name='verify']:checked")[0]).val();
 
-    if (!verifybox || !verifylabel) {
+    if (!verified) {
       alert("Please make sure you've answered each question.");
       return false;
-    } else if(verifybox == "no" && verifylabel != "no") {
-      alert("If you selected 'No' for the first question, please select 'No' for the second question as well.")
-      return false;
     }
+
     return true;
   }
 
@@ -68,10 +65,8 @@ $(document).ready(function() {
   }
 
   function saveLabels() {
-    currentLabels.bbox = $($("input[name='verifybox']:checked")[0]).val();
-    currentLabels.label = $($("input[name='verifylabel']:checked")[0]).val();
-
-    var data = $.extend({}, currentLabels)
-    workerAnswers[currentImg] = data;
+    currentLabels = $($("input[name='verify']:checked")[0]).val();
+    workerLabels[currentImg] = currentLabels;
+    workerAnswers[currentImg] = currentLabels;
   }
 });
