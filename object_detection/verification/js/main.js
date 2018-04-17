@@ -35,7 +35,7 @@ function prepImg() {
   var category = prelabels[currentImg].label;
   $("#category").text(category);
 
-  currentImgSrc = "../../images/" + currentImg;
+  currentImgSrc = "../../images/" + currentImg + ".jpg";
 
   $("#counter").text(current + 1);
 

@@ -33,7 +33,7 @@ function prepImg() {
   $(".label").remove();
   $("#inputs span").remove();
 
-  currentImgSrc = "../../images/" + currentImg;
+  currentImgSrc = "../../images/" + currentImg + ".jpg";
 
   $("#counter").text(current + 1);
 

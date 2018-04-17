@@ -37,7 +37,7 @@ function prepImg() {
   var category = groundtruth[currentImg][0];
   $("#category").text(mappings[category]);
 
-  currentImgSrc = "../../images/" + currentImg;
+  currentImgSrc = "../../images/" + currentImg + ".jpg";
 
   $("#counter").text(current + 1);
 
