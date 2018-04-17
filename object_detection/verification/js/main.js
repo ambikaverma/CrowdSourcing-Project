@@ -35,7 +35,7 @@ function prepImg() {
   var category = prelabels[currentImg].label;
   $("#category").text(category);
 
-  currentImgSrc = "../../images/" + currentImg + ".jpg";
+  currentImgSrc = "../../images/" + currentImg;
 
   $("#counter").text(current + 1);
 
@@ -53,7 +53,7 @@ function getWorkerLabels() {
   $("input[name='verify'][value='" + currentLabels + "']").prop("checked", true);
 }
 
-function getPreLabels() {  
+function getPreLabels() {
   workerLabels[currentImg] = "";
   currentLabels = workerLabels[currentImg];
 }
