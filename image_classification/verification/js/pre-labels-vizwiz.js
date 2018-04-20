@@ -1,4 +1,4 @@
-var mappings = {
+var prelabels = {
   "vw03826": {
     "tripod": 0.03,
     "stick": 0.15,
