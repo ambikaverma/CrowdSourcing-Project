@@ -85,7 +85,7 @@ function getPreLabels() {
 
   if (!labels) {
     currentLabels.noPredictions = true;
-    $("#inputs").append("<span class='important'><b>No predictions provided, just click Next!</b></span>");
+    $("#inputs").append("<tr class='important'><td><b>No predictions provided, just click Next!</b></td></tr>");
     return;
   }
 
