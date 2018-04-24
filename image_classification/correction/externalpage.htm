@@ -46,7 +46,7 @@ function decode(strToDecode) {
   <p>A smart computer is trying to learn how to identify objects in an image and needs your help! It has predicted some object categories based on previously provided information, and your job is to verify these predictions and provide correct missing labels.
   <ul>
     <li>You will be shown 10 images one by one. Most images will have predicted categories from the computer, though some images may not have any predictions. Verify if these predictions are correct by choosing <i>Yes</i> or <i>No</i>. The computer's confidence scores are also listed next to their corresponding labels and range from 0 (least confident) to 1 (most confident).</li>
-    <li>We are only looking for the following categories in an image: <span class='important'>airplane, bicycle, bird, boat, bottle, bus, car, cat, chair, cow, dog, horse, motorcycle, person, potted plant, sheep, sofa/couch, table, train, TV/monitor</span>. Click the <b>+ add another object</b> button to select any combination of these categories to add. It is also possible for an image to have none of these categories; in this case, select <span class='important'>NONE OF THE ABOVE</span> in the list.</li>
+    <li>We are only looking for the following categories in an image: <span class='important'>airplane, bicycle, bird, boat, bottle, bus, car, cat, chair, cow, dog, horse, motorcycle, person, potted plant, sheep, sofa/couch, dining table, train, TV/monitor</span>. Click the <b>+ add another object</b> button to select any combination of these categories to add. It is also possible for an image to have none of these categories; in this case, select <span class='important'>NONE OF THE ABOVE</span> in the list.</li>
     <li>Hover your cursor over the image and use your scroll wheel to zoom in and out on a particular region of the image. Click the image once to reset it.</li>
     <li>Press the <b>< Prev</b> and <b>Next ></b> buttons to navigate between images. If the image does not load, click the red button. Once you have reached the last image, press <b>Next ></b> to optionally provide feedback and submit your work.</li>
   </ul>
@@ -112,7 +112,7 @@ function decode(strToDecode) {
           <td><input type='checkbox' class='categories' name='categories' value='bird'>&nbsp;<b>bird</b></td>
           <td><input type='checkbox' class='categories' name='categories' value='cat'>&nbsp;<b>cat</b></td>
           <td><input type='checkbox' class='categories' name='categories' value='motorcycle'>&nbsp;<b>motorcycle</b></td>
-          <td><input type='checkbox' class='categories' name='categories' value='table'>&nbsp;<b>table</b></td>
+          <td><input type='checkbox' class='categories' name='categories' value='dining_table'>&nbsp;<b>dining table</b></td>
         </tr>
         <tr>
           <td><input type='checkbox' class='categories' name='categories' value='boat'>&nbsp;<b>boat</b></td>
