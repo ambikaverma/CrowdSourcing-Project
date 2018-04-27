@@ -41,14 +41,34 @@ $(document).ready(function() {
     }
 
     var answersOk = true;
+    var numPositive = 0;
+
+    currentLabels.positives = [];
+    currentLabels.negatives = [];
+
     $.each(currentLabels.addedCategories, function(i, val) {
-      if (!$("input:radio[name='" + val + "']:checked").val()) {
+      var response = $("input:radio[name=" + val + "]:checked").val();
+      if (!response) {
         alert("Please make sure you've selected YES or NO for each category.");
         answersOk = false;
       }
+
+      if (response == "yes") {
+        currentLabels.positives.push(val);
+        numPositive++;
+      }
+      else
+        currentLabels.negatives.push(val);
+
       if (!answersOk)
         return answersOk;
     });
+
+    if (!numPositive) {
+      alert("Please add missing object categories.");
+      answersOk = false;
+    }
+
     return answersOk;
   }
 
@@ -75,17 +95,6 @@ $(document).ready(function() {
   }
 
   function saveLabels() {
-    currentLabels.positives = [];
-    currentLabels.negatives = [];
-
-    $.each(currentLabels.addedCategories, function(i, val) {
-      var response = $("input:radio[name=" + val + "]:checked").val();
-      if (response == "yes")
-        currentLabels.positives.push(val);
-      else
-        currentLabels.negatives.push(val);
-    });
-
     var data = {
       "positives": currentLabels.positives.slice(),
     }
