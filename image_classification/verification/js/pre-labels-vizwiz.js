@@ -98,7 +98,7 @@ var prelabels = {
     "dog": 0.97
   },
   "vw07392": {
-    "tv\/monitor": 0.18
+    "tv_monitor": 0.18
   },
   "vw11928": {
     "vase": 0.98
@@ -148,7 +148,7 @@ var prelabels = {
     "bottle": 0.7
   },
   "vw05978": {
-    "tv\/monitor": 0.83
+    "tv_monitor": 0.83
   },
   "vw12824": {
     "bag": 0.12,
@@ -162,10 +162,10 @@ var prelabels = {
     "dog": 0.48
   },
   "vw06574": {
-    "tv\/monitor": 0.52
+    "tv_monitor": 0.52
   },
   "vw06909": {
-    "tv\/monitor": 0.31
+    "tv_monitor": 0.31
   },
   "vw09204": {
     "cat": 0.78
@@ -174,7 +174,7 @@ var prelabels = {
     "dog": 0.1
   },
   "vw04787": {
-    "tv\/monitor": 0.82
+    "tv_monitor": 0.82
   },
   "vw05800": {
     "dog": 0.78
@@ -189,7 +189,7 @@ var prelabels = {
     "dog": 0.75
   },
   "vw06307": {
-    "tv\/monitor": 0.11
+    "tv_monitor": 0.11
   },
   "vw13328": {
     "swab": 0.12
@@ -211,7 +211,7 @@ var prelabels = {
   },
   "vw05782": {
     "web_site": 0.18,
-    "tv\/monitor": 0.19,
+    "tv_monitor": 0.19,
     "computer": 0.12
   },
   "vw04715": {
@@ -227,7 +227,7 @@ var prelabels = {
     "dog": 0.92
   },
   "vw12992": {
-    "tv\/monitor": 0.75
+    "tv_monitor": 0.75
   },
   "vw04894": {
     "computer": 0.31,
@@ -314,7 +314,7 @@ var prelabels = {
     "bottle": 0.87
   },
   "vw17485": {
-    "tv\/monitor": 0.18
+    "tv_monitor": 0.18
   },
   "vw01440": {
     "dog": 0.71
@@ -326,15 +326,15 @@ var prelabels = {
     "shovel": 0.8
   },
   "vw03559": {
-    "tv\/monitor": 0.2
+    "tv_monitor": 0.2
   },
   "vw04130": {
-    "tv\/monitor": 0.4,
+    "tv_monitor": 0.4,
     "computer": 0.17
   },
   "vw01973": {
     "sofa": 0.1,
-    "tv\/monitor": 0.15,
+    "tv_monitor": 0.15,
     "bed": 0.37
   },
   "vw07234": {
@@ -368,10 +368,10 @@ var prelabels = {
     "bottle": 1
   },
   "vw16435": {
-    "tv\/monitor": 0.17
+    "tv_monitor": 0.17
   },
   "vw09643": {
-    "tv\/monitor": 0.87
+    "tv_monitor": 0.87
   },
   "vw03833": {
     "bottle": 0.5
@@ -487,14 +487,14 @@ var prelabels = {
   "vw02183": {
     "laptop": 0.19,
     "printer": 0.21,
-    "tv\/monitor": 0.11
+    "tv_monitor": 0.11
   },
   "vw03510": {
     "ashcan": 0.15,
     "bottle": 0.17
   },
   "vw16437": {
-    "tv\/monitor": 0.14,
+    "tv_monitor": 0.14,
     "restaurant": 0.41
   },
   "vw02188": {
@@ -521,7 +521,7 @@ var prelabels = {
     "bottle": 0.54
   },
   "vw11780": {
-    "tv\/monitor": 0.57
+    "tv_monitor": 0.57
   },
   "vw13247": {
     "pajama": 0.24,
@@ -548,11 +548,11 @@ var prelabels = {
     "car": 0.21
   },
   "vw03589": {
-    "tv\/monitor": 0.36,
+    "tv_monitor": 0.36,
     "computer": 0.11
   },
   "vw04497": {
-    "tv\/monitor": 0.67
+    "tv_monitor": 0.67
   },
   "vw04146": {
     "snorkel": 0.17
@@ -567,7 +567,7 @@ var prelabels = {
   },
   "vw18693": {
     "computer": 0.22,
-    "tv\/monitor": 0.26
+    "tv_monitor": 0.26
   },
   "vw04088": {
     "bottle": 0.86
@@ -601,7 +601,7 @@ var prelabels = {
   },
   "vw01981": {
     "computer": 0.36,
-    "tv\/monitor": 0.16
+    "tv_monitor": 0.16
   },
   "vw02232": {
     "bottle": 0.95
@@ -613,7 +613,7 @@ var prelabels = {
     "vacuum": 0.32
   },
   "vw01146": {
-    "tv\/monitor": 0.21,
+    "tv_monitor": 0.21,
     "desk": 0.1
   },
   "vw05035": {
@@ -655,7 +655,7 @@ var prelabels = {
     "igniter": 0.21
   },
   "vw01326": {
-    "tv\/monitor": 0.51
+    "tv_monitor": 0.51
   },
   "vw02516": {
     "laptop": 0.85
@@ -668,7 +668,7 @@ var prelabels = {
   },
   "vw03464": {
     "ipod": 0.26,
-    "tv\/monitor": 0.18,
+    "tv_monitor": 0.18,
     "cash_machine": 0.14
   },
   "vw01452": {
@@ -725,7 +725,7 @@ var prelabels = {
     "bottle": 0.44
   },
   "vw15619": {
-    "tv\/monitor": 0.1,
+    "tv_monitor": 0.1,
     "dog": 0.58
   },
   "vw04192": {
@@ -761,7 +761,7 @@ var prelabels = {
   "vw10890": {
     "laptop": 0.27,
     "computer": 0.14,
-    "tv\/monitor": 0.12
+    "tv_monitor": 0.12
   },
   "vw13004": {
     "wing": 0.35
@@ -787,7 +787,7 @@ var prelabels = {
     "desk": 0.17
   },
   "vw02790": {
-    "tv\/monitor": 0.53
+    "tv_monitor": 0.53
   },
   "vw03114": {
     "bottle": 0.97
@@ -796,7 +796,7 @@ var prelabels = {
     "bottle": 0.38
   },
   "vw01776": {
-    "tv\/monitor": 0.33
+    "tv_monitor": 0.33
   },
   "vw01770": {
     "bottle": 0.59
@@ -809,19 +809,19 @@ var prelabels = {
     "clock": 0.23
   },
   "vw00175": {
-    "tv\/monitor": 0.22
+    "tv_monitor": 0.22
   },
   "vw05000": {
     "bottle": 0.81
   },
   "vw03508": {
-    "tv\/monitor": 0.52
+    "tv_monitor": 0.52
   },
   "vw07280": {
-    "tv\/monitor": 0.26
+    "tv_monitor": 0.26
   },
   "vw03374": {
-    "tv\/monitor": 0.15
+    "tv_monitor": 0.15
   },
   "vw04555": {
     "bottle": 0.75
@@ -830,7 +830,7 @@ var prelabels = {
     "dog": 0.34
   },
   "vw10981": {
-    "tv\/monitor": 0.6
+    "tv_monitor": 0.6
   },
   "vw08035": {
     "bottle": 0.9
@@ -852,7 +852,7 @@ var prelabels = {
     "dining table": 0.22
   },
   "vw10626": {
-    "tv\/monitor": 0.7,
+    "tv_monitor": 0.7,
     "cabinet": 0.13
   },
   "vw17978": {
@@ -893,7 +893,7 @@ var prelabels = {
     "cat": 1
   },
   "vw06639": {
-    "tv\/monitor": 0.29
+    "tv_monitor": 0.29
   },
   "vw03200": {
     "cat": 0.26
@@ -938,7 +938,7 @@ var prelabels = {
     "bottle": 0.73
   },
   "vw03720": {
-    "tv\/monitor": 0.3,
+    "tv_monitor": 0.3,
     "computer": 0.12
   },
   "vw00319": {
@@ -955,7 +955,7 @@ var prelabels = {
     "barbershop": 0.2
   },
   "vw09002": {
-    "tv\/monitor": 0.65
+    "tv_monitor": 0.65
   },
   "vw03044": {
     "bottle": 0.84
@@ -1015,7 +1015,7 @@ var prelabels = {
     "dining table": 0.91
   },
   "vw09361": {
-    "tv\/monitor": 0.26,
+    "tv_monitor": 0.26,
     "projector": 0.12
   },
   "vw02520": {
@@ -1051,7 +1051,7 @@ var prelabels = {
     "bottle": 0.84
   },
   "vw01813": {
-    "tv\/monitor": 0.36,
+    "tv_monitor": 0.36,
     "computer": 0.13
   },
   "vw03322": {
@@ -1089,7 +1089,7 @@ var prelabels = {
     "bottle": 0.41
   },
   "vw14737": {
-    "tv\/monitor": 0.19
+    "tv_monitor": 0.19
   },
   "vw03929": {
     "bottle": 0.54
@@ -1105,7 +1105,7 @@ var prelabels = {
     "sandbar": 0.19
   },
   "vw09947": {
-    "tv\/monitor": 0.19,
+    "tv_monitor": 0.19,
     "computer": 0.14
   },
   "vw10100": {
@@ -1134,7 +1134,7 @@ var prelabels = {
     "laptop": 0.88
   },
   "vw06185": {
-    "tv\/monitor": 0.92
+    "tv_monitor": 0.92
   },
   "vw04668": {
     "bottle": 0.3,
@@ -1185,11 +1185,11 @@ var prelabels = {
     "parking_meter": 0.52
   },
   "vw06521": {
-    "tv\/monitor": 0.14
+    "tv_monitor": 0.14
   },
   "vw16969": {
     "computer": 0.24,
-    "tv\/monitor": 0.11
+    "tv_monitor": 0.11
   },
   "vw07449": {
     "dog": 0.59
@@ -1207,7 +1207,7 @@ var prelabels = {
     "bottle": 0.78
   },
   "vw05936": {
-    "tv\/monitor": 0.44
+    "tv_monitor": 0.44
   },
   "vw02139": {
     "computer": 0.27,
