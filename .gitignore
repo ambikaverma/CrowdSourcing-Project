@@ -47,6 +47,9 @@ Temporary Items
 .apdisk
 
 # Other
+__pycache__
+.ipynb_checkpoints
+azure_cfg.py
 hit-cli/logs
 images
 pycocotools
