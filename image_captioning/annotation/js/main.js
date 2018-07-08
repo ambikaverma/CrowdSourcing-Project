@@ -44,7 +44,6 @@ function prepImg() {
 
 function getWorkerLabels() {
   currentLabels = workerLabels[currentImg];
-
   $("textarea[name='caption']").val(currentLabels);
 }
 
