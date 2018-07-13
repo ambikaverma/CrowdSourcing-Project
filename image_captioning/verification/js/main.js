@@ -31,8 +31,8 @@ function prepImg() {
 
   $("input[name='verify']").prop("checked", false);
 
-  var caption = "\"" + prelabels[currentImg + ".jpg"][0]["text"] + "\"";
-  $(".caption").html(caption);
+  var caption = prelabels[currentImg + ".jpg"][0]["text"];
+  $(".caption").html("\"" + caption + "\"");
 
   currentImgSrc = "../../images/" + currentImg + ".jpg";
   $("img").first().attr("src", currentImgSrc);

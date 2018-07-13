@@ -1,4 +1,94 @@
 var prelabels = {
+  "1": {
+    "label": "cow",
+    "bbox": {
+      "ymin": 192,
+      "xmin": 236,
+      "ymax": 249,
+      "xmax": 348
+    }
+  },
+  "10": {
+    "label": "horse",
+    "bbox": {
+      "ymin": 100,
+      "xmin": 58,
+      "ymax": 354,
+      "xmax": 427
+    }
+  },
+  "3": {
+    "label": "airplane",
+    "bbox": {
+      "ymin": 34,
+      "xmin": 84,
+      "ymax": 333,
+      "xmax": 482
+    }
+  },
+  "2": {
+    "label": "person",
+    "bbox": {
+      "ymin": 5,
+      "xmin": 1,
+      "ymax": 374,
+      "xmax": 191
+    }
+  },
+  "5": {
+    "label": "person",
+    "bbox": {
+      "ymin": 63,
+      "xmin": 225,
+      "ymax": 345,
+      "xmax": 338
+    }
+  },
+  "4": {
+    "label": "person",
+    "bbox": {
+      "ymin": 593,
+      "xmin": 268,
+      "ymax": 199,
+      "xmax": 380
+    }
+  },
+  "7": {
+    "label": "person",
+    "bbox": {
+      "ymin": 76,
+      "xmin": 125,
+      "ymax": 306,
+      "xmax": 334
+    }
+  },
+  "6": {
+    "label": "bird",
+    "bbox": {
+      "ymin": 61,
+      "xmin": 105,
+      "ymax": 138,
+      "xmax": 185
+    }
+  },
+  "9": {
+    "label": "person",
+    "bbox": {
+      "ymin": 41,
+      "xmin": 38,
+      "ymax": 349,
+      "xmax": 388
+    }
+  },
+  "8": {
+    "label": "dog",
+    "bbox": {
+      "ymin": 94,
+      "xmin": 192,
+      "ymax": 282,
+      "xmax": 499
+    }
+  },
   "497094":{
     "bbox":{
        "xmin":230,
