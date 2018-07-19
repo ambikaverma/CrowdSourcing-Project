@@ -36,9 +36,10 @@ $(document).ready(function() {
 
   function checkAnswers() {
     currentLabels = $("textarea[name='caption']").val();
+    currentLabels = currentLabels.trim().replace(/\s+/g, " ");
 
-    if (!currentLabels.length) {
-      alert("Please make sure you've provided a caption for this image.");
+    if (currentLabels.split(" ").length < 5) {
+      alert("Please make sure your caption is at least 8 words.");
       return false;
     }
     return true;
