@@ -39,7 +39,7 @@ $(document).ready(function() {
     currentLabels = currentLabels.trim().replace(/\s+/g, " ");
 
     if (currentLabels.split(" ").length < 5) {
-      alert("Please make sure your caption is at least 8 words.");
+      alert("Please make sure your caption is at least 5 words.");
       return false;
     }
     return true;

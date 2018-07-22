@@ -31,13 +31,20 @@ function prepImg() {
 
   $("textarea[name='caption']").val("");
 
-  var caption = prelabels[currentImg + ".jpg"][0]["text"];
+  var caption = prelabels[currentImg + ".jpg"][0]
+                ? prelabels[currentImg + ".jpg"][0]["text"]
+                : "<< No prediction available, please provide your own! >>";
   $(".caption").html("\"" + caption + "\"");
 
   currentImgSrc = "../../images/" + currentImg + ".jpg";
   $("img").first().attr("src", currentImgSrc);
 
   $("#counter").text(current + 1);
+
+  if (!prelabels[currentImg + ".jpg"][0])
+    $("#copyPaste").prop("disabled", true);
+  else
+    $("#copyPaste").prop("disabled", false);
 
   if (workerLabels[currentImg])
     getWorkerLabels();

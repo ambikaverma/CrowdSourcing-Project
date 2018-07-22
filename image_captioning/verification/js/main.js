@@ -31,7 +31,9 @@ function prepImg() {
 
   $("input[name='verify']").prop("checked", false);
 
-  var caption = prelabels[currentImg + ".jpg"][0]["text"];
+  var caption = prelabels[currentImg + ".jpg"][0]
+                ? prelabels[currentImg + ".jpg"][0]["text"]
+                : "<< No prediction available, please select [No]. >>";
   $(".caption").html("\"" + caption + "\"");
 
   currentImgSrc = "../../images/" + currentImg + ".jpg";
