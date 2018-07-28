@@ -25,7 +25,7 @@ $(document).ready(function() {
   });
 
   $("#submitButton").click(function() {
-    $("input").remove();
+    $("input[type='radio']").remove();
 
     $("<input />")
       .attr("type", "hidden")
